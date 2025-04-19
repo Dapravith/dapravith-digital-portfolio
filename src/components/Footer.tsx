@@ -1,4 +1,3 @@
-
 import { useTranslation } from "react-i18next";
 import { 
   Github, 
@@ -11,7 +10,7 @@ import {
 } from "lucide-react";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["nav", "footer"]);
   
   const scrollToTop = () => {
     window.scrollTo({
@@ -74,32 +73,32 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#home" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.home")}
+                  {t("home")}
                 </a>
               </li>
               <li>
                 <a href="#about" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.about")}
+                  {t("about")}
                 </a>
               </li>
               <li>
                 <a href="#experience" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.experience")}
+                  {t("experience")}
                 </a>
               </li>
               <li>
                 <a href="#skills" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.skills")}
+                  {t("skills")}
                 </a>
               </li>
               <li>
                 <a href="#projects" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.projects")}
+                  {t("projects")}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.contact")}
+                  {t("contact")}
                 </a>
               </li>
             </ul>
@@ -107,7 +106,7 @@ const Footer = () => {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">{t("nav.contact")}</h3>
+            <h3 className="text-xl font-bold mb-4">{t("contact")}</h3>
             <div className="flex items-center mb-2 text-gray-400">
               <MapPin className="h-4 w-4 mr-2" />
               <p>Russeykeo, Phnom Penh, Cambodia</p>

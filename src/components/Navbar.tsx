@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,11 +8,10 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("nav");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Track scroll position to add background to navbar
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -23,23 +21,20 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Navigation items
   const navItems = [
-    { name: t("nav.home"), href: "#home" },
-    { name: t("nav.about"), href: "#about" },
-    { name: t("nav.experience"), href: "#experience" },
-    { name: t("nav.education"), href: "#education" }, // Corrected label
-    { name: t("nav.skills"), href: "#skills" },
-    { name: t("nav.projects"), href: "#projects" },
-    { name: t("nav.contact"), href: "#contact" },
+    { name: t("home"), href: "#home" },
+    { name: t("about"), href: "#about" },
+    { name: t("experience"), href: "#experience" },
+    { name: t("education"), href: "#education" },
+    { name: t("skills"), href: "#skills" },
+    { name: t("projects"), href: "#projects" },
+    { name: t("contact"), href: "#contact" },
   ];
 
-  // Click handler for mobile nav items (closes menu)
   const handleMobileNavClick = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Scroll to section function
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId.replace('#', ''));
     if (element) {
@@ -60,7 +55,6 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container max-w-7xl mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
           <motion.div
             className="font-bold text-xl gradient-text hover-scale"
@@ -71,7 +65,6 @@ const Navbar = () => {
           </motion.div>
         </a>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item, index) => (
             <motion.div
@@ -94,13 +87,11 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Theme and Language Switchers - Desktop */}
         <div className="hidden md:flex items-center gap-2">
           <ThemeSwitcher />
           <LanguageSwitcher />
         </div>
 
-        {/* Mobile Menu Button */}
         <Button
           variant="ghost"
           size="icon"
@@ -116,7 +107,6 @@ const Navbar = () => {
         </Button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -148,7 +138,6 @@ const Navbar = () => {
                 </motion.div>
               ))}
               
-              {/* Theme and Language Switchers - Mobile */}
               <div className="flex items-center gap-4 mt-6 justify-center">
                 <ThemeSwitcher />
                 <LanguageSwitcher />
