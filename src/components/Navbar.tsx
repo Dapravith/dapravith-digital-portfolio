@@ -1,14 +1,15 @@
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeSwitcher from "./ThemeSwitcher";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useTranslation("footer");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +37,6 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId.replace('#', ''));
     if (element) {
-      // Ensure smooth scrolling works
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsMobileMenuOpen(false);
     }
@@ -67,7 +67,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            Rotha Dapravith
+            {t("name")}
           </motion.div>
         </a>
 

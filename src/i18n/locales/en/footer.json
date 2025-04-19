@@ -1,5 +1,15 @@
 
 {
   "copyright": "© 2025 Rotha Dapravith. All rights reserved.",
-  "backToTop": "Back to Top"
+  "backToTop": "Back to Top",
+  "quickLinks": "Quick Links",
+  "name": "Rotha Dapravith",
+  "role": "Full-Stack Developer & DevOps Engineer",
+  "address": {
+    "city": "Russeykeo",
+    "province": "Phnom Penh",
+    "country": "Cambodia",
+    "full": "Russeykeo, Phnom Penh, Cambodia"
+  },
+  "contact": "Contact"
 }
