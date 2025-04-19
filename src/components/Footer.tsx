@@ -1,11 +1,11 @@
+
 import { 
   Github, 
   Linkedin, 
   Twitter, 
   Mail, 
   ArrowUp,
-  Phone,
-  MapPin
+  Phone
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Name and Brief */}
           <div>
             <h3 className="text-2xl font-bold mb-4 gradient-text">{t("name")}</h3>
@@ -103,38 +103,6 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">{t("contact")}</h3>
-            <div className="flex items-center mb-2 text-gray-400">
-              <MapPin className="h-4 w-4 mr-2" />
-              <p>{t("address.full")}</p>
-            </div>
-            
-            <div className="flex items-center mb-2 text-gray-400">
-              <Mail className="h-4 w-4 mr-2" />
-              <a href="mailto:dapravithrotha@gmail.com" className="hover:text-white transition-colors">
-                dapravithrotha@gmail.com
-              </a>
-            </div>
-            
-            <div className="flex items-center mb-4 text-gray-400">
-              <Phone className="h-4 w-4 mr-2" />
-              <a href="tel:+85589337798" className="hover:text-white transition-colors">
-                +855 089 933 7798
-              </a>
-            </div>
-            
-            <button 
-              onClick={scrollToTop}
-              className="flex items-center text-gray-400 hover:text-white transition-colors"
-              aria-label={t("backToTop")}
-            >
-              <ArrowUp className="h-4 w-4 mr-2" />
-              {t("backToTop")}
-            </button>
           </div>
         </div>
         
