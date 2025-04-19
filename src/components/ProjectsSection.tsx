@@ -5,6 +5,19 @@ import ProjectFilters from "./projects/ProjectFilters";
 import ProjectGrid from "./projects/ProjectGrid";
 import { useTranslation } from "react-i18next";
 
+// Define proper interface for project items
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  category: string[];
+  links: {
+    github?: string;
+    demo?: string;
+    swagger?: string;
+  };
+}
+
 const ProjectsSection = () => {
   const { t } = useTranslation("projects");
   const [filter, setFilter] = useState("all");
@@ -18,12 +31,12 @@ const ProjectsSection = () => {
     devops: t("filters.devops")
   };
   
-  // Use translations for the projects data
-  const projects = t("items", { returnObjects: true });
+  // Use translations for the projects data with proper typing
+  const projects = t("items", { returnObjects: true }) as Project[];
 
   const filteredProjects = filter === "all" 
     ? projects 
-    : projects.filter((project: any) => project.category.includes(filter));
+    : projects.filter((project) => project.category.includes(filter));
 
   return (
     <section id="projects" className="py-16" ref={sectionRef}>
