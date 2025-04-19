@@ -12,10 +12,7 @@
   "error": "មានបញ្ហាក្នុងការផ្ញើសាររបស់អ្នក។ សូមព្យាយាមម្តងទៀត។",
   "socialLinks": {
     "linkedin": "LinkedIn",
-    "github": "GitHub",
+    "github": "GitHub", 
     "twitter": "Twitter"
-  },
-  "location": {
-    "title": "ទីតាំងអាស័យដ្ឋាន"
   }
 }
