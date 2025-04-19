@@ -178,7 +178,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2023 Rotha Dapravith. All rights reserved.",
+    "copyright": "© 2025 Rotha Dapravith. All rights reserved.",
     "backToTop": "Back to Top"
   },
   "theme": {
@@ -192,14 +192,14 @@
       "education1": {
         "degree": "Bachelor of Information Technology",
         "institution": "Institute of Technology of Cambodia",
-        "period": "Sep 2020 - Feb 2024",
+        "Period": "Nov 2019 - July 2024",
         "location": "Phnom Penh, Cambodia",
-        "details": [
-          "Major in Information Technology Engineering",
-          "Graduated with High Distinction",
-          "Active member of Technology and Innovation Club",
-          "Participated in multiple hackathons and tech competitions"
-        ]
+      },
+      "education2": {
+        "degree": "High School Diploma",
+        "institution": "Russeykeo High School",
+        "Period": "Nov 2013 - Aug 2019",
+        "location": "Phnom Penh, Cambodia",
       }
     }
   }
