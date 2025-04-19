@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,7 @@ import { DownloadIcon, ArrowRight } from "lucide-react";
 const HeroSection = () => {
   const [typedText, setTypedText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [nameAnimation, setNameAnimation] = useState(false);
   const titleRef = useRef("Full-Stack Developer | DevOps Engineer | Creator");
   
   // Typing effect
@@ -23,11 +25,23 @@ const HeroSection = () => {
       } else {
         clearInterval(typingInterval);
         setIsTypingComplete(true);
+        // Start name animation after typing is complete
+        setTimeout(() => {
+          setNameAnimation(true);
+        }, 500);
       }
     }, 50);
     
     return () => clearInterval(typingInterval);
   }, []);
+  
+  // Function to properly scroll to the projects section
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   // Animation variants
   const containerVariants = {
@@ -49,6 +63,9 @@ const HeroSection = () => {
       transition: { duration: 0.5 }
     }
   };
+
+  // Rainbow text animation for title
+  const titleCharacters = typedText.split('');
   
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-16">
@@ -68,7 +85,7 @@ const HeroSection = () => {
           </motion.h2>
           
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text"
+            className={`text-4xl md:text-5xl lg:text-6xl font-bold ${nameAnimation ? 'animate-rainbow-text' : 'gradient-text'}`}
             variants={itemVariants}
           >
             Rotha Dapravith
@@ -78,8 +95,19 @@ const HeroSection = () => {
             className="relative min-h-[60px] md:min-h-[80px] flex items-center"
             variants={itemVariants}
           >
-            <h3 className="text-xl md:text-2xl lg:text-3xl">
-              {typedText}
+            <h3 className="text-xl md:text-2xl lg:text-3xl flex flex-wrap">
+              {titleCharacters.map((char, index) => (
+                <span 
+                  key={index} 
+                  className="animate-rainbow-text" 
+                  style={{ 
+                    animationDelay: `${index * 0.1}s`,
+                    display: 'inline-block'
+                  }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </span>
+              ))}
               {!isTypingComplete && (
                 <span className="inline-block w-1 h-6 bg-primary animate-blink-caret ml-1"></span>
               )}
@@ -102,7 +130,7 @@ const HeroSection = () => {
               Download Resume
             </Button>
             
-            <Button variant="outline">
+            <Button variant="outline" onClick={scrollToProjects}>
               View Projects
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

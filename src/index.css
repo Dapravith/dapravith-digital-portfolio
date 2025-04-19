@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -151,5 +152,21 @@
   /* Responsive container */
   .container-fluid {
     @apply w-full px-4 md:px-8 lg:px-16;
+  }
+  
+  /* Rainbow text animation */
+  @keyframes rainbow-text {
+    0% { color: #ff5e5e; } /* Red */
+    15% { color: #ffb86c; } /* Orange */
+    30% { color: #fae069; } /* Yellow */
+    45% { color: #9ee37d; } /* Green */
+    60% { color: #7dd3fc; } /* Light Blue */
+    75% { color: #a78bfa; } /* Purple */
+    90% { color: #f472b6; } /* Pink */
+    100% { color: #ff5e5e; } /* Back to Red */
+  }
+  
+  .animate-rainbow-text {
+    animation: rainbow-text 8s linear infinite;
   }
 }

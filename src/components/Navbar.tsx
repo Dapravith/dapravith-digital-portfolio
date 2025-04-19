@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -35,7 +36,8 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId.replace('#', ''));
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Ensure smooth scrolling works
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsMobileMenuOpen(false);
     }
   };
@@ -52,7 +54,14 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container max-w-7xl mx-auto px-4 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2">
+        <a 
+          href="#home" 
+          className="flex items-center gap-2"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('home');
+          }}
+        >
           <motion.div
             className="font-bold text-xl gradient-text hover-scale"
             whileHover={{ scale: 1.05 }}
@@ -75,7 +84,7 @@ const Navbar = () => {
                 className="text-foreground/80 hover:text-foreground transition-colors animated-underline py-1"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(item.href);
+                  scrollToSection(item.href.replace('#', ''));
                 }}
               >
                 {item.name}
@@ -126,7 +135,7 @@ const Navbar = () => {
                     className="block text-xl py-3 border-b border-border"
                     onClick={(e) => {
                       e.preventDefault();
-                      scrollToSection(item.href);
+                      scrollToSection(item.href.replace('#', ''));
                       handleMobileNavClick();
                     }}
                   >
