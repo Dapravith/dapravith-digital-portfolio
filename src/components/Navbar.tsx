@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { t } = useTranslation("footer");
+  const { t } = useTranslation(["nav", "footer"]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +22,12 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
-    { name: "Education", href: "#education" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" }
+    { name: t("home"), href: "#home" },
+    { name: t("about"), href: "#about" },
+    { name: t("experience"), href: "#experience" },
+    { name: t("education"), href: "#education" },
+    { name: t("skills"), href: "#skills" },
+    { name: t("projects"), href: "#projects" }
   ];
 
   const handleMobileNavClick = () => {
@@ -67,7 +67,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            {t("name")}
+            {t("name", { ns: "footer" })}
           </motion.div>
         </a>
 
