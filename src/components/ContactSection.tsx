@@ -107,7 +107,7 @@ const ContactSection = () => {
                     ) : (
                       <div className="flex items-center">
                         <Send className="mr-2 h-4 w-4" />
-                        <span>Submit</span>
+                        <span>Send</span>
                       </div>
                     )}
                   </Button>
