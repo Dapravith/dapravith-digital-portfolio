@@ -1,0 +1,42 @@
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-blue to-primary-emerald bg-clip-text text-transparent;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg;
+  }
+
+  .dark .glass-card {
+    @apply bg-black/20 border-white/10;
+  }
+
+  .animated-underline {
+    @apply relative after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .button-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary text-white font-medium py-2 px-4 rounded-md transition-all duration-300;
+  }
+
+  .dark .button-gradient:hover {
+    @apply from-[hsl(var(--primary-hover))] to-[hsl(var(--secondary-hover))];
+  }
+
+  .dark .button-gradient:active {
+    @apply from-[hsl(var(--primary-active))] to-[hsl(var(--secondary-active))];
+  }
+
+  .dark .button-gradient:disabled {
+    @apply from-[hsl(var(--primary-disabled))] to-[hsl(var(--secondary-disabled))] cursor-not-allowed;
+  }
+}

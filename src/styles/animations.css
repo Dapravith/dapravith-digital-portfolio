@@ -1,0 +1,74 @@
+
+@layer utilities {
+  .typed-cursor {
+    @apply animate-blink-caret;
+  }
+
+  .loading-bar {
+    @apply h-1 bg-gradient-to-r from-primary via-secondary to-primary w-full origin-left animate-loading;
+  }
+
+  .timeline-dot {
+    @apply absolute left-0 w-4 h-4 rounded-full bg-primary translate-x-[-50%] translate-y-[6px];
+  }
+
+  .skill-card {
+    @apply p-4 rounded-lg shadow-md bg-white dark:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .container-fluid {
+    @apply w-full px-4 md:px-8 lg:px-16;
+  }
+
+  @keyframes rainbow-text {
+    0% { color: #ff5e5e; }
+    15% { color: #ffb86c; }
+    30% { color: #fae069; }
+    45% { color: #9ee37d; }
+    60% { color: #7dd3fc; }
+    75% { color: #a78bfa; }
+    90% { color: #f472b6; }
+    100% { color: #ff5e5e; }
+  }
+  
+  .animate-rainbow-text {
+    animation: rainbow-text 8s linear infinite;
+  }
+
+  .animate-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    background-image: linear-gradient(
+      45deg,
+      #ff5e5e,
+      #ffb86c,
+      #fae069,
+      #9ee37d,
+      #7dd3fc,
+      #a78bfa,
+      #f472b6
+    );
+    animation: gradient-flow 8s ease infinite;
+  }
+
+  .animate-typing {
+    @apply overflow-hidden border-r-4 border-primary whitespace-nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: currentColor }
+  }
+}
