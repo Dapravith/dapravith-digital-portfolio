@@ -34,6 +34,7 @@ const ExperienceSection = () => {
 
   // Experience and education items from translation
   const experienceItems = [
+    "current",
     "job1",
     "job2",
     "job3"
