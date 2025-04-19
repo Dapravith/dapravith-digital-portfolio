@@ -6,7 +6,7 @@ import {
   Calendar, 
   MapPin, 
   ChevronRight,
-  GraduationCap // Add graduation cap icon
+  GraduationCap
 } from "lucide-react";
 
 const ExperienceSection = () => {
@@ -40,7 +40,8 @@ const ExperienceSection = () => {
   ];
 
   const educationItems = [
-    "education1"
+    "education1",
+    "education2"
   ];
 
   return (
@@ -177,18 +178,6 @@ const ExperienceSection = () => {
                         {t(`education.timeline.${item}.location`)}
                       </div>
                     </div>
-
-                    <ul className="space-y-2 mt-4">
-                      {(() => {
-                        const details = t(`education.timeline.${item}.details`, { returnObjects: true }) as string[];
-                        return details.map((detail: string, i: number) => (
-                          <li key={i} className="flex items-start">
-                            <ChevronRight className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                            <span>{detail}</span>
-                          </li>
-                        ));
-                      })()}
-                    </ul>
                   </div>
                 </motion.div>
               ))}

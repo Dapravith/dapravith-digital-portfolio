@@ -1,3 +1,4 @@
+
 {
   "language": {
     "en": "English",
@@ -192,14 +193,14 @@
       "education1": {
         "degree": "Bachelor of Information Technology",
         "institution": "Institute of Technology of Cambodia",
-        "Period": "Nov 2019 - July 2024",
-        "location": "Phnom Penh, Cambodia",
+        "period": "Nov 2019 - July 2024",
+        "location": "Phnom Penh, Cambodia"
       },
       "education2": {
         "degree": "High School Diploma",
         "institution": "Russeykeo High School",
-        "Period": "Nov 2013 - Aug 2019",
-        "location": "Phnom Penh, Cambodia",
+        "period": "Nov 2013 - Aug 2019",
+        "location": "Phnom Penh, Cambodia"
       }
     }
   }
