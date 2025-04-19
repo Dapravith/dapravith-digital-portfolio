@@ -4,24 +4,16 @@
   "subtitle": "ជំនាញបច្ចេកទេស",
   "categories": {
     "programming": "កម្មវិធីកុំព្យូទ័រ",
-    "webDev": "ការអភិវឌ្ឍវេបសាយ",
+    "webDev": "ការអភិវឌ្ឍវេបសាយ", 
     "databases": "មូលដ្ឋានទិន្នន័យ",
     "devOps": "DevOps",
-    "security": "សុវត្ថិភាព",
-    "os": "ប្រព័ន្ធប្រតិបត្តិការ",
-    "design": "ការរចនា",
-    "versionControl": "ការគ្រប់គ្រងកំណែ",
-    "languages": "ភាសា"
+    "security": "សុវត្ថិភាព"
   },
   "items": {
     "programming": ["C", "C++", "Python", "Java", "JavaScript", "TypeScript"],
     "webDev": ["ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
     "databases": ["MySQL", "MongoDB", "PostgresQL"],
     "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"],
-    "security": ["OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],
-    "os": ["Windows", "macOS", "Linux", "Ubuntu Server"],
-    "design": ["Figma", "draw.io", "UML"],
-    "versionControl": ["GitHub"],
-    "languages": ["អង់គ្លេស", "ខ្មែរ"]
+    "security": ["OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"]
   }
 }

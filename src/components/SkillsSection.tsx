@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -6,13 +7,9 @@ import {
   FaReact,
   FaNodeJs,
   FaDocker,
-  FaGithub,
+  FaAws,
   FaAngular,
   FaVuejs,
-  FaAws,
-  FaWindows,
-  FaLinux,
-  FaApple,
 } from "react-icons/fa";
 import {
   SiSpringboot,
@@ -27,14 +24,12 @@ import {
   SiJsonwebtokens,
   SiAuth0,
   SiOpenid,
-  SiFigma,
   SiC,
   SiCplusplus,
   SiTypescript,
   SiJavascript,
   SiBitbucket,
 } from "react-icons/si";
-import { LuFileStack } from "react-icons/lu";
 
 const SkillsSection = () => {
   const categories = {
@@ -42,11 +37,7 @@ const SkillsSection = () => {
     webDev: "Web Development",
     databases: "Databases",
     devOps: "DevOps",
-    security: "Security",
-    os: "Operating Systems",
-    design: "Design",
-    versionControl: "Version Control",
-    languages: "Languages"
+    security: "Security"
   };
 
   const skillIcons = {
@@ -76,7 +67,7 @@ const SkillsSection = () => {
       "Docker": <FaDocker className="text-2xl text-blue-500" />,
       "Nginx": <SiNginx className="text-2xl text-green-600" />,
       "Jenkins": <SiJenkins className="text-2xl text-red-500" />,
-      "Portainer.io": <LuFileStack className="text-2xl text-blue-400" />,
+      "Portainer.io": <FaDocker className="text-2xl text-blue-400" />,
       "AWS": <FaAws className="text-2xl text-orange-400" />,
       "Bitbucket": <SiBitbucket className="text-2xl text-blue-600" />,
       "CI/CD": <SiJenkins className="text-2xl text-gray-600" />,
@@ -88,24 +79,6 @@ const SkillsSection = () => {
       "OpenID Connect": <SiOpenid className="text-2xl text-orange-600" />,
       "SSO": <SiKeycloak className="text-2xl text-green-600" />,
     },
-    os: {
-      "Windows": <FaWindows className="text-2xl text-blue-500" />,
-      "macOS": <FaApple className="text-2xl text-gray-600" />,
-      "Linux": <FaLinux className="text-2xl text-yellow-600" />,
-      "Ubuntu Server": <FaLinux className="text-2xl text-orange-600" />,
-    },
-    design: {
-      "Figma": <SiFigma className="text-2xl text-purple-500" />,
-      "draw.io": <LuFileStack className="text-2xl text-blue-400" />,
-      "UML": <LuFileStack className="text-2xl text-gray-600" />,
-    },
-    versionControl: {
-      "GitHub": <FaGithub className="text-2xl text-gray-800 dark:text-gray-200" />,
-    },
-    languages: {
-      "English": <span className="text-2xl">🇬🇧</span>,
-      "Khmer": <span className="text-2xl">🇰🇭</span>,
-    },
   };
 
   const skillItems = {
@@ -113,11 +86,7 @@ const SkillsSection = () => {
     webDev: ["ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
     databases: ["MySQL", "MongoDB", "PostgresQL"],
     devOps: ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"],
-    security: ["OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],
-    os: ["Windows", "macOS", "Linux", "Ubuntu Server"],
-    design: ["Figma", "draw.io", "UML"],
-    versionControl: ["GitHub"],
-    languages: ["English", "Khmer"]
+    security: ["OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"]
   };
 
   return (
