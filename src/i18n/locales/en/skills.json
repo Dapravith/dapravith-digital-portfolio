@@ -5,10 +5,10 @@
   "categories": {
     "webDev": "Web Development", 
     "databases": "Databases",
-    "devOps": "DevOps & System Automation"
+    "devOps": "DevOps"
   },
   "items": {
-    "webDev": ["C", "C++", "Python", "Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot", "OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],
+    "webDev": ["Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
     "databases": ["MySQL", "MongoDB", "PostgresQL"],
     "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"]
   }
