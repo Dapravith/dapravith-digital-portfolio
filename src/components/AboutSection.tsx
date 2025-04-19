@@ -1,6 +1,6 @@
-
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { DownloadIcon } from "lucide-react";
 
@@ -47,34 +47,19 @@ const AboutSection = () => {
 
           {/* Content Grid */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Image / Resume Preview */}
+            {/* Profile Photo */}
             <motion.div 
-              className="order-2 md:order-1"
+              className="order-2 md:order-1 flex justify-center"
               variants={itemVariants}
             >
-              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden h-96 relative">
-                {/* Resume Preview Placeholder */}
-                <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
-                  <h3 className="font-medium">resume.pdf</h3>
-                  <Button className="button-gradient">
-                    <DownloadIcon className="mr-2 h-4 w-4" />
-                    {t("about.resume")}
-                  </Button>
-                </div>
-                <div className="p-6 h-full overflow-auto">
-                  {/* This would be replaced with an actual PDF preview */}
-                  <div className="space-y-4">
-                    <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md animate-pulse"></div>
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded-md w-3/4 animate-pulse"></div>
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded-md animate-pulse"></div>
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded-md w-5/6 animate-pulse"></div>
-                    <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded-md mt-8 animate-pulse"></div>
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded-md animate-pulse"></div>
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded-md w-4/5 animate-pulse"></div>
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded-md w-3/4 animate-pulse"></div>
-                  </div>
-                </div>
-              </div>
+              <Avatar className="w-64 h-64 border-4 border-primary/50 shadow-lg">
+                <AvatarImage 
+                  src="/lovable-uploads/087f7e66-308a-4440-9671-fcfd0946758d.png" 
+                  alt="Rotha Dapravith Profile" 
+                  className="object-cover"
+                />
+                <AvatarFallback>RD</AvatarFallback>
+              </Avatar>
             </motion.div>
 
             {/* Text Content */}
