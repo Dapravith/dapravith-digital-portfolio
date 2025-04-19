@@ -4,9 +4,9 @@
   "subtitle": "ការងារសំខាន់ៗ",
   "filters": {
     "all": "ទាំងអស់",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "devops": "DevOps"
+    "frontend": "ផ្នែកខាងមុខ",
+    "backend": "ផ្នែកខាងក្រោយ",
+    "devops": "ប្រព័ន្ធស្វ័យប្រវិត្តកម្មនៃកម្មវិធី"
   },
   "items": [
     {
