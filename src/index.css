@@ -52,16 +52,12 @@
   .dark {
     /* Dark mode variables */
     --background: 222 47% 11%;
-    --foreground: 0 0% 98%;
-
+    --foreground: 0 0% 100%; /* Pure white color */
     --card: 222 47% 11%;
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 0 0% 100%; /* Pure white color */
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 0 0% 98%;
-
-    /* Primary: #60A5FA in dark mode */
-    --primary: 217 91% 68%;
+    /* Primary color set to white in dark mode */
+    --primary: 0 0% 100%;
     --primary-foreground: 222 47% 11%;
 
     /* Secondary: #34D399 in dark mode */
