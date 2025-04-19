@@ -1,10 +1,7 @@
-
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import ProjectFilters from "./projects/ProjectFilters";
+import ProjectGrid from "./projects/ProjectGrid";
 
 const ProjectsSection = () => {
   const [filter, setFilter] = useState("all");
@@ -75,32 +72,6 @@ const ProjectsSection = () => {
     ? projects 
     : projects.filter(project => project.category.includes(filter));
 
-  // Enhanced animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      }
-    }
-  };
-
-  const projectVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: i => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
-        delay: i * 0.1,
-      }
-    })
-  };
-
   return (
     <section id="projects" className="py-16" ref={sectionRef}>
       <motion.div
@@ -128,93 +99,14 @@ const ProjectsSection = () => {
           </motion.p>
         </div>
         
-        {/* Filter controls */}
-        <motion.div
-          className="flex flex-wrap gap-2 justify-center mb-8"
-          initial={{ opacity: 0, y: 10 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          {Object.entries(filters).map(([key, value], index) => (
-            <motion.div
-              key={key}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
-            >
-              <Button
-                variant={filter === key ? "default" : "outline"}
-                onClick={() => setFilter(key)}
-                className="rounded-full text-sm px-4"
-              >
-                {value}
-              </Button>
-            </motion.div>
-          ))}
-        </motion.div>
+        <ProjectFilters
+          filters={filters}
+          currentFilter={filter}
+          onFilterChange={setFilter}
+          isInView={isInView}
+        />
 
-        {/* Projects grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              variants={projectVariants}
-              className="h-full"
-            >
-              <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-300 hover:scale-[1.02] transform">
-                <CardContent className="p-6 flex-grow flex flex-col">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
-                  
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, i) => (
-                        <Badge 
-                          key={i} 
-                          variant="secondary" 
-                          className="text-xs"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-3 mt-auto">
-                    {project.links.github && (
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <Github size={18} />
-                        <span className="sr-only">GitHub</span>
-                      </a>
-                    )}
-                    {project.links.demo && (
-                      <a
-                        href={project.links.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <ExternalLink size={18} />
-                        <span className="sr-only">Live Demo</span>
-                      </a>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+        <ProjectGrid projects={filteredProjects} />
       </motion.div>
     </section>
   );
