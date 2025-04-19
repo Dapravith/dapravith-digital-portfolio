@@ -1,9 +1,13 @@
+
 import { motion } from "framer-motion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { DownloadIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const AboutSection = () => {
+  const { t } = useTranslation("about");
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,9 +39,9 @@ const AboutSection = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           <motion.div className="text-center" variants={itemVariants}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-              Professional Background
+              {t("subtitle")}
             </p>
           </motion.div>
 
@@ -61,10 +65,10 @@ const AboutSection = () => {
               variants={itemVariants}
             >
               <p className="text-lg">
-                I am a Full-Stack Developer with over 2 years of experience in building web applications and implementing DevOps solutions. With a strong foundation in Java Spring Boot, React, and modern DevOps practices, I focus on creating efficient, secure, and user-friendly applications.
+                {t("paragraph1")}
               </p>
               <p>
-                I hold a degree in Information Technology and have completed specialized training in DevOps, including containerization, CI/CD pipelines, and infrastructure as code.
+                {t("paragraph2")}
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-8">

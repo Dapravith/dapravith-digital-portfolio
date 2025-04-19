@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send, MapPin, Phone } from "lucide-react";
@@ -6,8 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
+  const { t } = useTranslation("contact");
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -27,7 +30,7 @@ const ContactSection = () => {
     
     setTimeout(() => {
       toast({
-        title: "Message sent successfully!",
+        title: t("success"),
         variant: "default",
       });
       setFormData({ name: "", email: "", message: "" });
@@ -46,9 +49,9 @@ const ContactSection = () => {
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Contact
+            {t("title")}
           </h2>
-          <p className="text-muted-foreground text-lg">Get in touch</p>
+          <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -59,7 +62,7 @@ const ContactSection = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Name
+                      {t("form.name")}
                     </label>
                     <Input
                       id="name"
@@ -72,7 +75,7 @@ const ContactSection = () => {
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email
+                      {t("form.email")}
                     </label>
                     <Input
                       id="email"
@@ -86,7 +89,7 @@ const ContactSection = () => {
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message
+                      {t("form.message")}
                     </label>
                     <Textarea
                       id="message"
@@ -102,12 +105,12 @@ const ContactSection = () => {
                     {isSubmitting ? (
                       <div className="flex items-center">
                         <div className="animate-spin mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
-                        <span>Submit</span>
+                        <span>{t("form.submit")}</span>
                       </div>
                     ) : (
                       <div className="flex items-center">
                         <Send className="mr-2 h-4 w-4" />
-                        <span>Send</span>
+                        <span>{t("form.submit")}</span>
                       </div>
                     )}
                   </Button>
