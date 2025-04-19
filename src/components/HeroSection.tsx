@@ -17,8 +17,8 @@ const HeroSection = () => {
   const downloadResume = () => {
     // Create a temporary anchor element
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Path to the resume file
-    link.download = 'Rotha_Dapravith_Resume.pdf'; // Default name for the downloaded file
+    link.href = '/ROTHA_DAPRAVITH_resume_application.pdf'; // Path to the resume file
+    link.download = '/public/ROTHA_DAPRAVITH_resume_application.pdf'; // Default name for the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
