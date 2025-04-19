@@ -24,9 +24,9 @@ const EducationSection = () => {
 
   const educationItems = [
     {
-      degree: "Bachelor of Information Technology",
-      institution: "Cambodia Institute of Technology",
-      period: "September 2020 - February 2024",
+      degree: "Engineering of Computer Science",
+      institution: "Institute of Technology of Cambodia",
+      period: "Novermber 2019 - July 2024",
       location: "Phnom Penh, Cambodia"
     },
     {
