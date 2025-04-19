@@ -1,4 +1,3 @@
-
 {
   "language": {
     "en": "English",
@@ -185,5 +184,23 @@
   "theme": {
     "light": "Light Mode",
     "dark": "Dark Mode"
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Academic Background",
+    "timeline": {
+      "education1": {
+        "degree": "Bachelor of Information Technology",
+        "institution": "Institute of Technology of Cambodia",
+        "period": "Sep 2020 - Feb 2024",
+        "location": "Phnom Penh, Cambodia",
+        "details": [
+          "Major in Information Technology Engineering",
+          "Graduated with High Distinction",
+          "Active member of Technology and Innovation Club",
+          "Participated in multiple hackathons and tech competitions"
+        ]
+      }
+    }
   }
 }
