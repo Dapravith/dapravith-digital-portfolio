@@ -5,7 +5,9 @@ import {
   Linkedin, 
   Twitter, 
   Mail, 
-  ArrowUp 
+  ArrowUp,
+  Phone,
+  MapPin
 } from "lucide-react";
 
 const Footer = () => {
@@ -57,7 +59,7 @@ const Footer = () => {
                 <Twitter className="h-5 w-5" />
               </a>
               <a 
-                href="mailto:contact@example.com" 
+                href="mailto:dapravithrotha@gmail.com" 
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Email"
               >
@@ -106,15 +108,38 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">{t("nav.contact")}</h3>
-            <p className="text-gray-400 mb-2">
-              Phnom Penh, Cambodia
-            </p>
-            <p className="text-gray-400 mb-2">
-              contact@example.com
-            </p>
-            <p className="text-gray-400 mb-4">
-              +855 123 456 789
-            </p>
+            <div className="flex items-center mb-2 text-gray-400">
+              <MapPin className="h-4 w-4 mr-2" />
+              <p>Russeykeo, Phnom Penh, Cambodia</p>
+            </div>
+            
+            <div className="flex items-center mb-2 text-gray-400">
+              <Mail className="h-4 w-4 mr-2" />
+              <a href="mailto:dapravithrotha@gmail.com" className="hover:text-white transition-colors">
+                dapravithrotha@gmail.com
+              </a>
+            </div>
+            
+            <div className="flex items-center mb-4 text-gray-400">
+              <Phone className="h-4 w-4 mr-2" />
+              <a href="tel:+85589337798" className="hover:text-white transition-colors">
+                +855 089 933 7798
+              </a>
+            </div>
+            
+            {/* Map Preview */}
+            <div className="mb-4 rounded overflow-hidden h-32">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62523.10126324276!2d104.85963722106!3d11.612173745887247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951add5e2cd81%3A0x171e0b69c7c6f7ba!2sRussey%20Keo%2C%20Phnom%20Penh%2C%20Cambodia!5e0!3m2!1sen!2sus!4v1713548123935!5m2!1sen!2sus"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Russeykeo, Phnom Penh, Cambodia"
+              />
+            </div>
             
             <button 
               onClick={scrollToTop}

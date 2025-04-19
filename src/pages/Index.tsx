@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,6 +8,9 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import SkillsSection from "@/components/SkillsSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import LoadingAnimation from "@/components/LoadingAnimation";
@@ -51,7 +55,9 @@ const Index = () => {
                 <HeroSection />
                 <AboutSection />
                 <ExperienceSection />
-                {/* Skills section and Projects section will be added later */}
+                <SkillsSection />
+                <ProjectsSection />
+                <ContactSection />
               </main>
               <Footer />
               <BackToTop />
