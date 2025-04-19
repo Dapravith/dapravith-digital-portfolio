@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const Footer = () => {
-  const { t } = useTranslation(["nav", "footer"]);
+  // const { t } = useTranslation(["nav", "footer"]);
   
   const scrollToTop = () => {
     window.scrollTo({
@@ -146,14 +146,14 @@ const Footer = () => {
               aria-label={t("footer.backToTop")}
             >
               <ArrowUp className="h-4 w-4 mr-2" />
-              {t("footer.backToTop")}
+              {("footer.backToTop")}
             </button>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
           <p>
-            {t("footer.copyright")}
+            {("footer.copyright")}
           </p>
         </div>
       </div>
