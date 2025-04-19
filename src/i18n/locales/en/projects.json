@@ -16,17 +16,16 @@
       "category": ["backend", "devops"],
       "links": {
         "github": "#",
-        "demo": "#",
-        "swagger": "#"
+        "demo": "#"
       }
     },
     {
       "title": "E-Commerce Management System",
       "description": "A comprehensive e-commerce solution with product management, user authentication, and order processing capabilities.",
-      "technologies": ["React", "Node.js", "MongoDB", "Express"],
+      "technologies": ["VueJS", "PHP", "Laravel", "MYSQL"],
       "category": ["frontend", "backend"],
       "links": {
-        "github": "#",
+        "github": "https://github.com/Dapravith/E-Commerce-Computer-Shop-Laravel.git",
         "demo": "#"
       }
     },
@@ -53,10 +52,10 @@
     {
       "title": "GIC Coffee Management System",
       "description": "A system for managing coffee shop operations, including inventory, sales, and customer management.",
-      "technologies": ["Angular", "Spring Boot", "MySQL"],
-      "category": ["frontend", "backend"],
+      "technologies": ["Thyleaf", "Spring Boot", "MySQL", "TailwindCSS"],
+      "category": ["backend"],
       "links": {
-        "github": "#",
+        "github": "https://github.com/Dapravith/Midterm-SE-GIC-Cafe-Project-Group16.git",
         "demo": "#"
       }
     }
