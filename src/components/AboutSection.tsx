@@ -28,16 +28,6 @@ const AboutSection = () => {
     }
   };
 
-  const downloadResume = () => {
-    // Create a temporary anchor element
-    const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Path to the resume file
-    link.download = 'Rotha_Dapravith_Resume.pdf'; // Default name for the downloaded file
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <section id="about" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900/30">
       <div className="container max-w-7xl mx-auto px-4">
@@ -91,13 +81,6 @@ const AboutSection = () => {
                   <p className="text-gray-600 dark:text-gray-400">Projects</p>
                 </div>
               </div>
-
-              <motion.div variants={itemVariants} className="mt-6">
-                <Button onClick={downloadResume} className="gap-2">
-                  <DownloadIcon size={16} />
-                  {t("resume")}
-                </Button>
-              </motion.div>
             </motion.div>
           </div>
         </motion.div>
