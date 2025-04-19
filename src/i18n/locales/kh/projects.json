@@ -30,16 +30,6 @@
       }
     },
     {
-      "title": "ប្រព័ន្ធគ្រប់គ្រងសេវាកម្មដឹកជញ្ជូន",
-      "description": "ប្រព័ន្ធមួយសម្រាប់គ្រប់គ្រងសេវាកម្មដឹកជញ្ជូន រួមទាំងការតាមដាន ការកំណត់កាលវិភាគ និងការគ្រប់គ្រងអតិថិជន។",
-      "technologies": ["MERN Stack", "React Native", "QR Code"],
-      "category": ["frontend", "backend"],
-      "links": {
-        "github": "#",
-        "demo": "#"
-      }
-    },
-    {
       "title": "ប្រព័ន្ធគ្រប់គ្រងហាងលក់គ្រឿងតុបតែង",
       "description": "ប្រព័ន្ធគ្រប់គ្រងស្តុក និងការលក់សម្រាប់ហាងលក់គ្រឿងតុបតែង។",
       "technologies": ["React", "Spring Boot", "PostgreSQL"],

@@ -30,16 +30,6 @@
       }
     },
     {
-      "title": "Delivery Service Management System",
-      "description": "A system for managing delivery services, including tracking, scheduling, and customer management.",
-      "technologies": ["MERN Stack", "React Native", "QR Code"],
-      "category": ["frontend", "backend"],
-      "links": {
-        "github": "#",
-        "demo": "#"
-      }
-    },
-    {
       "title": "Accessories Store Management System",
       "description": "An inventory and sales management system for accessories stores.",
       "technologies": ["React", "Spring Boot", "PostgreSQL"],
