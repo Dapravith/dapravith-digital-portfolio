@@ -1,73 +1,115 @@
-# Welcome to your Lovable project
 
-## Project info
+# Rotha Dapravith Portfolio
 
-**URL**: https://lovable.dev/projects/27789cd3-90e0-4c69-a872-562f6e31c5cf
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features bilingual support (English/Khmer), dark/light mode, and smooth animations.
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+- **Bilingual Support**: Toggle between English and Khmer languages
+- **Dark/Light Mode**: Customizable theme settings
+- **Responsive Design**: Mobile-first approach for all screen sizes
+- **Smooth Animations**: Using Framer Motion for engaging transitions
+- **Modern UI Components**: Built with shadcn/ui library
+- **Type-Safe**: Built with TypeScript for better development experience
 
-**Use Lovable**
+## 🚀 Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/27789cd3-90e0-4c69-a872-562f6e31c5cf) and start prompting.
+- **Frontend Framework**: React
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Animations**: Framer Motion
+- **Internationalization**: i18next
+- **Icons**: Lucide React
+- **Build Tool**: Vite
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📦 Installation
 
-**Use your preferred IDE**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Dapravith/rothadapravith.portoflio.git
+   cd rothadapravith.portoflio
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-Follow these steps:
+4. Open your browser and visit:
+   ```
+   http://localhost:8080
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🔧 Available Scripts
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📱 Project Structure
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/        # Reusable UI components
+├── contexts/         # React Context providers
+├── hooks/           # Custom React hooks
+├── i18n/            # Internationalization files
+├── pages/           # Page components
+├── styles/          # Global styles and themes
+└── types/           # TypeScript type definitions
 ```
 
-**Edit a file directly in GitHub**
+## 🌍 Internationalization
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The portfolio supports two languages:
+- English (en)
+- Khmer (kh)
 
-**Use GitHub Codespaces**
+Language files are located in `src/i18n/locales/`.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Theming
 
-## What technologies are used for this project?
+The portfolio supports both light and dark themes:
+- Uses next-themes for theme management
+- Theme switcher accessible from the navigation bar
+- System preference detection
 
-This project is built with:
+## 📚 Components
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Key sections include:
+- Hero Section
+- About Section
+- Experience Section
+- Education Section
+- Skills Section
+- Projects Section
+- Contact Section
 
-## How can I deploy this project?
+## 📄 License
 
-Simply open [Lovable](https://lovable.dev/projects/27789cd3-90e0-4c69-a872-562f6e31c5cf) and click on Share -> Publish.
+MIT License - feel free to use this project for your own portfolio!
 
-## Can I connect a custom domain to my Lovable project?
+## 👤 Author
 
-Yes, you can!
+**Rotha Dapravith**
+- LinkedIn: [Rotha Dapravith](https://linkedin.com/in/rotha-dapravith)
+- GitHub: [@Dapravith](https://github.com/Dapravith)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🤝 Contributing
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m 'Add YourFeature'`
+4. Push to the branch: `git push origin feature/YourFeature`
+5. Open a pull request
+
