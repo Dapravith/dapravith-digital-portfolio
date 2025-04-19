@@ -1,0 +1,27 @@
+
+{
+  "title": "Skills",
+  "subtitle": "Technical Expertise",
+  "categories": {
+    "programming": "Programming",
+    "webDev": "Web Development",
+    "databases": "Databases",
+    "devOps": "DevOps",
+    "security": "Security",
+    "os": "Operating Systems",
+    "design": "Design",
+    "versionControl": "Version Control",
+    "languages": "Languages"
+  },
+  "items": {
+    "programming": ["C", "C++", "Python", "Java", "JavaScript", "TypeScript"],
+    "webDev": ["ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
+    "databases": ["MySQL", "MongoDB", "PostgresQL"],
+    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"],
+    "security": ["OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],
+    "os": ["Windows", "macOS", "Linux", "Ubuntu Server"],
+    "design": ["Figma", "draw.io", "UML"],
+    "versionControl": ["GitHub"],
+    "languages": ["English", "Khmer"]
+  }
+}

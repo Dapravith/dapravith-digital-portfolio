@@ -1,3 +1,4 @@
+
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { 
@@ -8,7 +9,7 @@ import {
 } from "lucide-react";
 
 const ExperienceSection = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("experience");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -49,9 +50,9 @@ const ExperienceSection = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           <motion.div className="text-center" variants={itemVariants}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("experience.title")}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-              {t("experience.subtitle")}
+              {t("subtitle")}
             </p>
           </motion.div>
 
@@ -80,30 +81,30 @@ const ExperienceSection = () => {
                   {/* Work Experience Content */}
                   <div className="md:ml-12 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
                     <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
-                      <h3 className="text-xl font-bold">{t(`experience.timeline.${item}.title`)}</h3>
+                      <h3 className="text-xl font-bold">{t(`timeline.${item}.title`)}</h3>
                       <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
                         <Calendar className="h-4 w-4 mr-1" />
-                        <span>{t(`experience.timeline.${item}.period`)}</span>
+                        <span>{t(`timeline.${item}.period`)}</span>
                       </div>
                     </div>
 
                     <div className="flex items-center mb-4">
                       <Briefcase className="h-4 w-4 text-primary mr-2" />
                       <div className="text-lg text-gray-700 dark:text-gray-300">
-                        {t(`experience.timeline.${item}.company`)}
+                        {t(`timeline.${item}.company`)}
                       </div>
                     </div>
 
                     <div className="flex items-center mb-4">
                       <MapPin className="h-4 w-4 text-primary mr-2" />
                       <div className="text-gray-600 dark:text-gray-400">
-                        {t(`experience.timeline.${item}.location`)}
+                        {t(`timeline.${item}.location`)}
                       </div>
                     </div>
 
                     <ul className="space-y-2 mt-4">
                       {(() => {
-                        const descriptions = t(`experience.timeline.${item}.description`, { returnObjects: true }) as string[];
+                        const descriptions = t(`timeline.${item}.description`, { returnObjects: true }) as string[];
                         return descriptions.map((desc: string, i: number) => (
                           <li key={i} className="flex items-start">
                             <ChevronRight className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0" />

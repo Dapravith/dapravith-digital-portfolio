@@ -1,3 +1,4 @@
+
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -5,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { DownloadIcon } from "lucide-react";
 
 const AboutSection = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["about", "common"]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -39,9 +40,9 @@ const AboutSection = () => {
         >
           {/* Section Header */}
           <motion.div className="text-center" variants={itemVariants}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("about.title")}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-              {t("about.subtitle")}
+              {t("subtitle")}
             </p>
           </motion.div>
 
@@ -68,13 +69,13 @@ const AboutSection = () => {
               variants={itemVariants}
             >
               <p className="text-lg">
-                {t("about.paragraph1")}
+                {t("paragraph1")}
               </p>
               <p>
-                {t("about.paragraph2")}
+                {t("paragraph2")}
               </p>
               <p>
-                {t("about.paragraph3")}
+                {t("paragraph3")}
               </p>
 
               {/* Stats or Additional Info */}

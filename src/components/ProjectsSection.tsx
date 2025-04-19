@@ -20,11 +20,11 @@ interface Project {
 }
 
 const ProjectsSection = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("projects");
   const [filter, setFilter] = useState("all");
   
   // Get project items from translations with proper typing
-  const projects = t("projects.items", { returnObjects: true }) as Project[];
+  const projects = t("items", { returnObjects: true }) as Project[];
   
   // Filter projects based on selected category
   const filteredProjects = filter === "all" 
@@ -44,14 +44,14 @@ const ProjectsSection = () => {
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            {t("projects.title")}
+            {t("title")}
           </h2>
-          <p className="text-muted-foreground text-lg">{t("projects.subtitle")}</p>
+          <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
         </div>
         
         {/* Filter controls */}
         <div className="flex flex-wrap gap-2 justify-center mb-8">
-          {Object.entries(t("projects.filters", { returnObjects: true }) as Record<string, string>).map(([key, value]) => (
+          {Object.entries(t("filters", { returnObjects: true }) as Record<string, string>).map(([key, value]) => (
             <Button
               key={key}
               variant={filter === key ? "default" : "outline"}

@@ -1,0 +1,64 @@
+
+{
+  "title": "Projects",
+  "subtitle": "Featured Work",
+  "filters": {
+    "all": "All",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps"
+  },
+  "items": [
+    {
+      "title": "Single Sign-On System and DevOps",
+      "description": "Developed a secure SSO system with OAuth2.0, Keycloak, and automated CI/CD pipelines using Jenkins, GitLab, Docker, and Nginx. APIs documented with Swagger UI.",
+      "technologies": ["Spring Boot", "Keycloak", "Docker", "Jenkins", "Nginx"],
+      "category": ["backend", "devops"],
+      "links": {
+        "github": "#",
+        "demo": "#",
+        "swagger": "#"
+      }
+    },
+    {
+      "title": "E-Commerce Management System",
+      "description": "A comprehensive e-commerce solution with product management, user authentication, and order processing capabilities.",
+      "technologies": ["React", "Node.js", "MongoDB", "Express"],
+      "category": ["frontend", "backend"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "title": "Delivery Service Management System",
+      "description": "A system for managing delivery services, including tracking, scheduling, and customer management.",
+      "technologies": ["MERN Stack", "React Native", "QR Code"],
+      "category": ["frontend", "backend"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "title": "Accessories Store Management System",
+      "description": "An inventory and sales management system for accessories stores.",
+      "technologies": ["React", "Spring Boot", "PostgreSQL"],
+      "category": ["frontend", "backend"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "title": "GIC Coffee Management System",
+      "description": "A system for managing coffee shop operations, including inventory, sales, and customer management.",
+      "technologies": ["Angular", "Spring Boot", "MySQL"],
+      "category": ["frontend", "backend"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    }
+  ]
+}

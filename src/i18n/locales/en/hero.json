@@ -1,0 +1,11 @@
+
+{
+  "greeting": "Hi, I'm",
+  "name": "Rotha Dapravith",
+  "title": "Full-Stack Developer | DevOps Engineer | Innovator",
+  "description": "A Full-Stack Developer and DevOps Engineer with 2+ years of experience building scalable solutions.",
+  "cta": {
+    "resume": "Download Resume",
+    "projects": "View Projects"
+  }
+}

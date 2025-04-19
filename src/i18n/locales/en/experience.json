@@ -1,0 +1,58 @@
+
+{
+  "title": "Experience",
+  "subtitle": "Professional Journey",
+  "timeline": {
+    "current": {
+      "title": "Full-stack Web Developer",
+      "company": "Digital Government Committee (DGC)",
+      "period": "Oct 2024 - Present",
+      "location": "Phnom Penh, Cambodia",
+      "description": [
+        "Design and maintain Java-based applications using Spring Boot framework",
+        "Implement Single Sign-On (SSO) integration using OAuth2 and OpenID Connect with Keycloak",
+        "Collaborate with front-end teams to integrate server-side logic and ensure seamless user experience",
+        "Write clean, maintainable, and efficient code following best practices.",
+        "Optimize application performance and troubleshoot complex issues",
+        "Stay current with industry trends and emerging technologies",
+        "Work under the supervision of the Ministry of Post and Telecommunication (MPTC)"
+      ]
+    },
+    "job1": {
+      "title": "Software Development and DevOps Intern",
+      "company": "Ministry of Economy and Finance",
+      "period": "Feb 2024 - Jun 2024",
+      "location": "Phnom Penh, Cambodia",
+      "description": [
+        "Contributed to DevOps integration and SSO initiatives",
+        "Designed web client applications optimized by Keycloak",
+        "Managed automation deployment, Dockerized applications, web server configuration, and secure sites",
+        "Assigned domain names for system projects and hosted all",
+        "Set up Telegram for project deployment monitoring and Jenkins CI/CD pipeline alerts"
+      ]
+    },
+    "job2": {
+      "title": "Web Developer Internship",
+      "company": "Institute of Technology of Cambodia",
+      "period": "Feb 2023 - May 2023",
+      "location": "Phnom Penh, Cambodia",
+      "description": [
+        "2-month internship on Delivery Service Management System",
+        "Utilized MERN Stack (MongoDB, ReactJS, NodeJS, ExpressJS)",
+        "Developed mobile apps for QR code scanning",
+        "Integrated APIs using Postman"
+      ]
+    },
+    "job3": {
+      "title": "DevOps Training",
+      "company": "Ministry of Public Works and Transport",
+      "period": "Feb 2024 - Jun 2024",
+      "location": "Cambodia",
+      "description": [
+        "Covered Linux OS, Docker containerization, Nginx reverse proxy",
+        "Jenkins CI/CD, Ansible, Docker Swarm",
+        "Grafana monitoring"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+
+{
+  "title": "ទំនាក់ទំនង",
+  "subtitle": "ទាក់ទងខ្ញុំ",
+  "form": {
+    "name": "ឈ្មោះ",
+    "email": "អ៊ីមែល",
+    "message": "សារ",
+    "submit": "ផ្ញើសារ"
+  },
+  "success": "សារត្រូវបានផ្ញើដោយជោគជ័យ!",
+  "error": "មានបញ្ហាក្នុងការផ្ញើសាររបស់អ្នក។ សូមព្យាយាមម្តងទៀត។",
+  "socialLinks": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "twitter": "Twitter"
+  }
+}

@@ -1,0 +1,63 @@
+
+{
+  "title": "គម្រោង",
+  "subtitle": "ការងារសំខាន់ៗ",
+  "filters": {
+    "all": "ទាំងអស់",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps"
+  },
+  "items": [
+    {
+      "title": "ប្រព័ន្ធ Single Sign-On និង DevOps",
+      "description": "បានអភិវឌ្ឍប្រព័ន្ធ SSO ដែលមានសុវត្ថិភាពជាមួយ OAuth2.0, Keycloak និងបានធ្វើស្វ័យប្រវត្តិកម្ម CI/CD pipelines ដោយប្រើ Jenkins, GitLab, Docker និង Nginx។ APIs ត្រូវបានឯកសារជាមួយ Swagger UI។",
+      "technologies": ["Spring Boot", "Keycloak", "Docker", "Jenkins", "Nginx"],
+      "category": ["backend", "devops"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "title": "ប្រព័ន្ធគ្រប់គ្រងពាណិជ្ជកម្មអេឡិចត្រូនិច",
+      "description": "ដំណោះស្រាយពាណិជ្ជកម្មអេឡិចត្រូនិចគ្រប់ជ្រុងជ្រោយជាមួយនឹងការគ្រប់គ្រងផលិតផល ការផ្ទៀងផ្ទាត់អ្នកប្រើប្រាស់ និងសមត្ថភាពដំណើរការការបញ្ជាទិញ។",
+      "technologies": ["React", "Node.js", "MongoDB", "Express"],
+      "category": ["frontend", "backend"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "title": "ប្រព័ន្ធគ្រប់គ្រងសេវាកម្មដឹកជញ្ជូន",
+      "description": "ប្រព័ន្ធមួយសម្រាប់គ្រប់គ្រងសេវាកម្មដឹកជញ្ជូន រួមទាំងការតាមដាន ការកំណត់កាលវិភាគ និងការគ្រប់គ្រងអតិថិជន។",
+      "technologies": ["MERN Stack", "React Native", "QR Code"],
+      "category": ["frontend", "backend"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "title": "ប្រព័ន្ធគ្រប់គ្រងហាងលក់គ្រឿងតុបតែង",
+      "description": "ប្រព័ន្ធគ្រប់គ្រងស្តុក និងការលក់សម្រាប់ហាងលក់គ្រឿងតុបតែង។",
+      "technologies": ["React", "Spring Boot", "PostgreSQL"],
+      "category": ["frontend", "backend"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "title": "ប្រព័ន្ធគ្រប់គ្រងកាហ្វេ GIC",
+      "description": "ប្រព័ន្ធសម្រាប់គ្រប់គ្រងប្រតិបត្តិការហាងកាហ្វេ រួមទាំងស្តុក ការលក់ និងការគ្រប់គ្រងអតិថិជន។",
+      "technologies": ["Angular", "Spring Boot", "MySQL"],
+      "category": ["frontend", "backend"],
+      "links": {
+        "github": "#",
+        "demo": "#"
+      }
+    }
+  ]
+}

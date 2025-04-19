@@ -1,0 +1,19 @@
+
+{
+  "title": "Education",
+  "subtitle": "Academic Background",
+  "timeline": {
+    "education1": {
+      "degree": "Bachelor of Information Technology",
+      "institution": "Institute of Technology of Cambodia",
+      "period": "Nov 2019 - July 2024",
+      "location": "Phnom Penh, Cambodia"
+    },
+    "education2": {
+      "degree": "High School Diploma",
+      "institution": "Russeykeo High School",
+      "period": "Nov 2013 - Aug 2019",
+      "location": "Phnom Penh, Cambodia"
+    }
+  }
+}

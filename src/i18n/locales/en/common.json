@@ -1,0 +1,11 @@
+
+{
+  "language": {
+    "en": "English",
+    "kh": "Khmer"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  }
+}

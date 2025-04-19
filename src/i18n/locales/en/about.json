@@ -1,0 +1,9 @@
+
+{
+  "title": "About Me",
+  "subtitle": "Professional Profile",
+  "paragraph1": "I'm a Full-Stack Developer with over 2 years of experience in building scalable web applications and implementing DevOps solutions. With a strong foundation in Java Spring Boot, React, and modern DevOps practices, I focus on creating efficient, secure, and user-friendly applications.",
+  "paragraph2": "My experience includes developing enterprise applications, implementing Single Sign-On systems, and containerizing applications with Docker. I'm passionate about creating clean, maintainable code and automating deployment processes.",
+  "paragraph3": "I hold a degree in Information Technology and have completed specialized training in DevOps practices, including containerization, CI/CD pipelines, and infrastructure as code.",
+  "resume": "Download Resume"
+}

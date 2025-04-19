@@ -11,7 +11,7 @@ import {
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
     <DropdownMenu>
