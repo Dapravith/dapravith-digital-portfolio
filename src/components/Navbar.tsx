@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,6 +26,7 @@ const Navbar = () => {
   const navItems = [
     { name: t("nav.home"), href: "#home" },
     { name: t("nav.about"), href: "#about" },
+    { name: t("nav.education"), href: "#education" },
     { name: t("nav.experience"), href: "#experience" },
     { name: t("nav.skills"), href: "#skills" },
     { name: t("nav.projects"), href: "#projects" },

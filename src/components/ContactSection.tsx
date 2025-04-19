@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -120,9 +119,9 @@ const ContactSection = () => {
             </Card>
           </div>
           
-          {/* Contact Information & Map */}
+          {/* Contact Information */}
           <div>
-            <Card className="shadow-md mb-6">
+            <Card className="shadow-md">
               <CardContent className="p-6">
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -163,20 +162,6 @@ const ContactSection = () => {
                 </div>
               </CardContent>
             </Card>
-            
-            {/* Map Embed */}
-            <div className="rounded-lg overflow-hidden shadow-md h-64">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62523.10126324276!2d104.85963722106!3d11.612173745887247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951add5e2cd81%3A0x171e0b69c7c6f7ba!2sRussey%20Keo%2C%20Phnom%20Penh%2C%20Cambodia!5e0!3m2!1sen!2sus!4v1713548123935!5m2!1sen!2sus"
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Russeykeo, Phnom Penh, Cambodia"
-              />
-            </div>
           </div>
         </div>
       </motion.div>
