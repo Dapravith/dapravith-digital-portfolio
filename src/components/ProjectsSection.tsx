@@ -136,17 +136,20 @@ const ProjectsSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           {Object.entries(filters).map(([key, value], index) => (
-            <Button
+            <motion.div
               key={key}
-              variant={filter === key ? "default" : "outline"}
-              onClick={() => setFilter(key)}
-              className="rounded-full text-sm px-4"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
             >
-              {value}
-            </Button>
+              <Button
+                variant={filter === key ? "default" : "outline"}
+                onClick={() => setFilter(key)}
+                className="rounded-full text-sm px-4"
+              >
+                {value}
+              </Button>
+            </motion.div>
           ))}
         </motion.div>
 
