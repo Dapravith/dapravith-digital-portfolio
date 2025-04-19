@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -168,5 +167,43 @@
   
   .animate-rainbow-text {
     animation: rainbow-text 8s linear infinite;
+  }
+
+  /* Text Animation Classes */
+  .animate-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    background-image: linear-gradient(
+      45deg,
+      #ff5e5e,
+      #ffb86c,
+      #fae069,
+      #9ee37d,
+      #7dd3fc,
+      #a78bfa,
+      #f472b6
+    );
+    animation: gradient-flow 8s ease infinite;
+  }
+
+  .animate-typing {
+    @apply overflow-hidden border-r-4 border-primary whitespace-nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: currentColor }
   }
 }
