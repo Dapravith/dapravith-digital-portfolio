@@ -27,7 +27,7 @@ import {
   SiJenkins,
   SiKeycloak,
   SiJsonwebtokens,
-  SiAuth0, // Changed from SiOauth to SiAuth0 since SiOauth doesn't exist
+  SiAuth0,
   SiOpenid,
   SiFigma,
   SiC,
@@ -39,7 +39,7 @@ import {
 import { LuFileStack } from "react-icons/lu";
 
 const SkillsSection = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("skills");
 
   // Define skill icons mapping
   const skillIcons = {
@@ -75,7 +75,7 @@ const SkillsSection = () => {
       "CI/CD": <SiJenkins className="text-2xl text-gray-600" />,
     },
     security: {
-      "OAuth2.0": <SiAuth0 className="text-2xl text-blue-600" />, // Changed from SiOauth to SiAuth0
+      "OAuth2.0": <SiAuth0 className="text-2xl text-blue-600" />,
       "Keycloak": <SiKeycloak className="text-2xl text-red-600" />,
       "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
       "OpenID Connect": <SiOpenid className="text-2xl text-orange-600" />,
@@ -95,10 +95,15 @@ const SkillsSection = () => {
     versionControl: {
       "GitHub": <FaGithub className="text-2xl text-gray-800 dark:text-gray-200" />,
     },
+    languages: {
+      "English": <span className="text-2xl">🇬🇧</span>,
+      "Khmer": <span className="text-2xl">🇰🇭</span>,
+    },
   };
 
   // Get all skill categories from translations
-  const categories = Object.keys(t("skills.categories", { returnObjects: true }) as object);
+  const categoriesObj = t("categories", { returnObjects: true }) as Record<string, string>;
+  const categories = Object.keys(categoriesObj);
 
   return (
     <section id="skills" className="py-16 bg-muted/30">
@@ -111,40 +116,46 @@ const SkillsSection = () => {
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            {t("skills.title")}
+            {t("title")}
           </h2>
-          <p className="text-muted-foreground text-lg">{t("skills.subtitle")}</p>
+          <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.map((category) => (
-            <Card key={category} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
-              <div className="bg-primary/10 p-4">
-                <h3 className="text-xl font-semibold text-center">
-                  {t(`skills.categories.${category}`)}
-                </h3>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex flex-wrap gap-4 justify-center">
-                  {(t(`skills.items.${category}`, { returnObjects: true }) as string[]).map((skill: string) => (
-                    <div
-                      key={skill}
-                      className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-muted transition-colors"
-                    >
-                      <div className="mb-2">
-                        {skillIcons[category as keyof typeof skillIcons]?.[skill] || 
-                          <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                            {skill.charAt(0)}
-                          </div>
-                        }
-                      </div>
-                      <span className="text-sm font-medium">{skill}</span>
-                    </div>
-                  ))}
+          {categories.map((category) => {
+            // Get skill items as array safely
+            const skillItems = t(`items.${category}`, { returnObjects: true });
+            const skillsArray = Array.isArray(skillItems) ? skillItems : [];
+            
+            return (
+              <Card key={category} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
+                <div className="bg-primary/10 p-4">
+                  <h3 className="text-xl font-semibold text-center">
+                    {t(`categories.${category}`)}
+                  </h3>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
+                <CardContent className="p-6">
+                  <div className="flex flex-wrap gap-4 justify-center">
+                    {skillsArray.map((skill: string) => (
+                      <div
+                        key={skill}
+                        className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-muted transition-colors"
+                      >
+                        <div className="mb-2">
+                          {skillIcons[category as keyof typeof skillIcons]?.[skill] || 
+                            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                              {skill.charAt(0)}
+                            </div>
+                          }
+                        </div>
+                        <span className="text-sm font-medium">{skill}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </motion.div>
     </section>
