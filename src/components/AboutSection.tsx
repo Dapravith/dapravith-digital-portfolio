@@ -64,9 +64,6 @@ const AboutSection = () => {
                 I am a Full-Stack Developer with over 2 years of experience in building web applications and implementing DevOps solutions. With a strong foundation in Java Spring Boot, React, and modern DevOps practices, I focus on creating efficient, secure, and user-friendly applications.
               </p>
               <p>
-                My experience includes developing enterprise applications, implementing Single Sign-On systems, and containerizing applications with Docker. I am passionate about writing clean, maintainable code and automating deployment processes.
-              </p>
-              <p>
                 I hold a degree in Information Technology and have completed specialized training in DevOps, including containerization, CI/CD pipelines, and infrastructure as code.
               </p>
 
