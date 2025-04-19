@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { 
   Briefcase, 
@@ -5,8 +6,11 @@ import {
   MapPin, 
   ChevronRight
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ExperienceSection = () => {
+  const { t } = useTranslation("experience");
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,57 +31,35 @@ const ExperienceSection = () => {
     }
   };
 
+  // Use translation data for experience items
   const experienceItems = [
     {
-      title: "Full-stack Web Developer",
-      company: "Digital Government Committee (DGC)",
-      period: "October 2024 - Present",
-      location: "Phnom Penh, Cambodia",
-      description: [
-        "Design and maintain Java-based applications using Spring Boot framework",
-        "Implement Single Sign-On (SSO) integration using OAuth2 and OpenID Connect with Keycloak",
-        "Collaborate with frontend developers to integrate server-side logic and ensure seamless user experience",
-        "Write clean, maintainable, and efficient code by following best practices",
-        "Improve application performance and solve complex problems",
-        "Stay up-to-date with industry trends and new technologies",
-        "Work under the supervision of the Ministry of Post and Telecommunications (MPTC)"
-      ]
+      title: t("timeline.current.title"),
+      company: t("timeline.current.company"),
+      period: t("timeline.current.period"),
+      location: t("timeline.current.location"),
+      description: t("timeline.current.description", { returnObjects: true }) as string[]
     },
     {
-      title: "Software and DevOps Intern",
-      company: "Ministry of Economy and Finance",
-      period: "February 2024 - June 2024",
-      location: "Phnom Penh, Cambodia",
-      description: [
-        "Contributed to DevOps integration and SSO initiatives",
-        "Designed web applications enhanced by Keycloak",
-        "Managed automated deployments, Dockerized applications, web server configurations, and secure websites",
-        "Set up domain names for all system projects and hosting",
-        "Configured Telegram for project deployment tracking and notifications from Jenkins CI/CD pipeline"
-      ]
+      title: t("timeline.job1.title"),
+      company: t("timeline.job1.company"),
+      period: t("timeline.job1.period"),
+      location: t("timeline.job1.location"),
+      description: t("timeline.job1.description", { returnObjects: true }) as string[]
     },
     {
-      title: "Web Development Intern",
-      company: "Cambodia Institute of Technology",
-      period: "February 2023 - May 2023",
-      location: "Phnom Penh, Cambodia",
-      description: [
-        "2-month internship on a Transportation Service Management System",
-        "Utilized MERN Stack (MongoDB, ReactJS, NodeJS, ExpressJS)",
-        "Developed a mobile application for QR code scanning",
-        "Integrated APIs using Postman"
-      ]
+      title: t("timeline.job2.title"),
+      company: t("timeline.job2.company"),
+      period: t("timeline.job2.period"),
+      location: t("timeline.job2.location"),
+      description: t("timeline.job2.description", { returnObjects: true }) as string[]
     },
     {
-      title: "DevOps Training",
-      company: "Ministry of Public Works and Transport",
-      period: "February 2024 - June 2024",
-      location: "Cambodia",
-      description: [
-        "Covered Linux operating systems, containerization with Docker, reverse proxy with Nginx",
-        "Jenkins CI/CD, Ansible, Docker Swarm",
-        "Monitoring with Grafana"
-      ]
+      title: t("timeline.job3.title"),
+      company: t("timeline.job3.company"),
+      period: t("timeline.job3.period"),
+      location: t("timeline.job3.location"),
+      description: t("timeline.job3.description", { returnObjects: true }) as string[]
     }
   ];
 
@@ -92,9 +74,9 @@ const ExperienceSection = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           <motion.div className="text-center" variants={itemVariants}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-              Professional Journey
+              {t("subtitle")}
             </p>
           </motion.div>
 
@@ -110,7 +92,7 @@ const ExperienceSection = () => {
             <div className="space-y-12">
               {experienceItems.map((item, index) => (
                 <motion.div 
-                  key={item.title}
+                  key={index}
                   className="relative"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}

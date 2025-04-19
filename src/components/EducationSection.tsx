@@ -1,7 +1,11 @@
+
 import { motion } from "framer-motion";
 import { Calendar, GraduationCap, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const EducationSection = () => {
+  const { t } = useTranslation("education");
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,16 +28,16 @@ const EducationSection = () => {
 
   const educationItems = [
     {
-      degree: "Engineering of Computer Science",
-      institution: "Institute of Technology of Cambodia",
-      period: "Novermber 2019 - July 2024",
-      location: "Phnom Penh, Cambodia"
+      degree: t("timeline.education1.degree"),
+      institution: t("timeline.education1.institution"),
+      period: t("timeline.education1.period"),
+      location: t("timeline.education1.location"),
     },
     {
-      degree: "High School Diploma",
-      institution: "Russey Keo High School",
-      period: "November 2013 - August 2019",
-      location: "Phnom Penh, Cambodia"
+      degree: t("timeline.education2.degree"),
+      institution: t("timeline.education2.institution"),
+      period: t("timeline.education2.period"),
+      location: t("timeline.education2.location"),
     }
   ];
 
@@ -48,9 +52,9 @@ const EducationSection = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           <motion.div className="text-center" variants={itemVariants}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Education</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-              Academic Background
+              {t("subtitle")}
             </p>
           </motion.div>
 

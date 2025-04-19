@@ -1,5 +1,7 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 import {
   FaJava,
   FaPython,
@@ -31,10 +33,12 @@ import {
 } from "react-icons/si";
 
 const SkillsSection = () => {
+  const { t } = useTranslation("skills");
+
   const categories = {
-    webDev: "Web Development",
-    databases: "Databases",
-    devOps: "DevOps"
+    webDev: t("categories.webDev"),
+    databases: t("categories.databases"),
+    devOps: t("categories.devOps")
   };
 
   const skillIcons = {
@@ -74,10 +78,11 @@ const SkillsSection = () => {
     }
   };
 
+  // Get skill items from translation
   const skillItems = {
-    webDev: ["C", "C++", "Python", "Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot", "OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],
-    databases: ["MySQL", "MongoDB", "PostgresQL"],
-    devOps: ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"]
+    webDev: t("items.webDev", { returnObjects: true }) as string[],
+    databases: t("items.databases", { returnObjects: true }) as string[],
+    devOps: t("items.devOps", { returnObjects: true }) as string[]
   };
 
   return (
@@ -91,9 +96,9 @@ const SkillsSection = () => {
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Skills
+            {t("title")}
           </h2>
-          <p className="text-muted-foreground text-lg">Technical Skills</p>
+          <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

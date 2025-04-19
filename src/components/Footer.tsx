@@ -1,3 +1,4 @@
+
 import { 
   Github, 
   Linkedin, 
@@ -7,8 +8,13 @@ import {
   Phone,
   MapPin
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useTranslation("footer");
+  const { t: tNav } = useTranslation("nav");
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -70,32 +76,32 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#home" className="text-gray-400 hover:text-white transition-colors">
-                  Home
+                  {tNav("home")}
                 </a>
               </li>
               <li>
                 <a href="#about" className="text-gray-400 hover:text-white transition-colors">
-                  About
+                  {tNav("about")}
                 </a>
               </li>
               <li>
                 <a href="#experience" className="text-gray-400 hover:text-white transition-colors">
-                  Experience
+                  {tNav("experience")}
                 </a>
               </li>
               <li>
                 <a href="#skills" className="text-gray-400 hover:text-white transition-colors">
-                  Skills
+                  {tNav("skills")}
                 </a>
               </li>
               <li>
                 <a href="#projects" className="text-gray-400 hover:text-white transition-colors">
-                  Projects
+                  {tNav("projects")}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
-                  Contact
+                  {tNav("contact")}
                 </a>
               </li>
             </ul>
@@ -103,7 +109,7 @@ const Footer = () => {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
+            <h3 className="text-xl font-bold mb-4">{tNav("contact")}</h3>
             <div className="flex items-center mb-2 text-gray-400">
               <MapPin className="h-4 w-4 mr-2" />
               <p>Russeykeo, Phnom Penh, Cambodia</p>
@@ -142,14 +148,14 @@ const Footer = () => {
               aria-label="Back to Top"
             >
               <ArrowUp className="h-4 w-4 mr-2" />
-              Back to Top
+              {t("backToTop")}
             </button>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
           <p>
-            © 2025 Rotha Dapravith. All rights reserved.
+            {t("copyright")}
           </p>
         </div>
       </div>
