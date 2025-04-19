@@ -1,11 +1,11 @@
 
 {
   "title": "Skills",
-  "subtitle": "Technical Expertise",
+  "subtitle": "Technology Stack I Worked With",
   "categories": {
     "webDev": "Web Development", 
     "databases": "Databases",
-    "devOps": "DevOps"
+    "devOps": "DevOps & System Automation"
   },
   "items": {
     "webDev": ["C", "C++", "Python", "Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot", "OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],

@@ -1,11 +1,11 @@
 
 {
   "title": "ជំនាញ",
-  "subtitle": "ជំនាញបច្ចេកទេស",
+  "subtitle": "បច្ចេកវិទ្យាដែលខ្ញុំធ្លាប់បានប្រើប្រាស់",
   "categories": {
     "webDev": "ការអភិវឌ្ឍវេបសាយ", 
     "databases": "មូលដ្ឋានទិន្នន័យ",
-    "devOps": "DevOps"
+    "devOps": "ប្រព័ន្ធស្វ័យប្រវត្តកម្មនិងដំណើរការកម្មវិធី"
   },
   "items": {
     "webDev": ["C", "C++", "Python", "Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot", "OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],
