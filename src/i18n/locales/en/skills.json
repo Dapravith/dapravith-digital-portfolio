@@ -3,17 +3,13 @@
   "title": "Skills",
   "subtitle": "Technical Expertise",
   "categories": {
-    "programming": "Programming",
     "webDev": "Web Development", 
     "databases": "Databases",
-    "devOps": "DevOps",
-    "security": "Security"
+    "devOps": "DevOps"
   },
   "items": {
-    "programming": ["C", "C++", "Python", "Java", "JavaScript", "TypeScript"],
-    "webDev": ["ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
+    "webDev": ["C", "C++", "Python", "Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot", "OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],
     "databases": ["MySQL", "MongoDB", "PostgresQL"],
-    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"],
-    "security": ["OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"]
+    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"]
   }
 }

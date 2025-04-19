@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -33,23 +32,19 @@ import {
 
 const SkillsSection = () => {
   const categories = {
-    programming: "Programming Languages",
     webDev: "Web Development",
     databases: "Databases",
-    devOps: "DevOps",
-    security: "Security"
+    devOps: "DevOps"
   };
 
   const skillIcons = {
-    programming: {
+    webDev: {
       "C": <SiC className="text-2xl text-blue-600" />,
       "C++": <SiCplusplus className="text-2xl text-blue-700" />,
       "Python": <FaPython className="text-2xl text-yellow-600" />,
       "Java": <FaJava className="text-2xl text-red-600" />,
       "JavaScript": <SiJavascript className="text-2xl text-yellow-400" />,
       "TypeScript": <SiTypescript className="text-2xl text-blue-500" />,
-    },
-    webDev: {
       "ReactJS": <FaReact className="text-2xl text-blue-400" />,
       "Angular": <FaAngular className="text-2xl text-red-500" />,
       "Vue": <FaVuejs className="text-2xl text-green-500" />,
@@ -57,6 +52,11 @@ const SkillsSection = () => {
       "ExpressJS": <SiExpress className="text-2xl text-gray-600" />,
       "NestJS": <SiNestjs className="text-2xl text-red-600" />,
       "Spring Boot": <SiSpringboot className="text-2xl text-green-600" />,
+      "OAuth2.0": <SiAuth0 className="text-2xl text-blue-600" />,
+      "Keycloak": <SiKeycloak className="text-2xl text-red-600" />,
+      "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
+      "OpenID Connect": <SiOpenid className="text-2xl text-orange-600" />,
+      "SSO": <SiKeycloak className="text-2xl text-green-600" />,
     },
     databases: {
       "MySQL": <SiMysql className="text-2xl text-blue-600" />,
@@ -71,22 +71,13 @@ const SkillsSection = () => {
       "AWS": <FaAws className="text-2xl text-orange-400" />,
       "Bitbucket": <SiBitbucket className="text-2xl text-blue-600" />,
       "CI/CD": <SiJenkins className="text-2xl text-gray-600" />,
-    },
-    security: {
-      "OAuth2.0": <SiAuth0 className="text-2xl text-blue-600" />,
-      "Keycloak": <SiKeycloak className="text-2xl text-red-600" />,
-      "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
-      "OpenID Connect": <SiOpenid className="text-2xl text-orange-600" />,
-      "SSO": <SiKeycloak className="text-2xl text-green-600" />,
-    },
+    }
   };
 
   const skillItems = {
-    programming: ["C", "C++", "Python", "Java", "JavaScript", "TypeScript"],
-    webDev: ["ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
+    webDev: ["C", "C++", "Python", "Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot", "OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],
     databases: ["MySQL", "MongoDB", "PostgresQL"],
-    devOps: ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"],
-    security: ["OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"]
+    devOps: ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"]
   };
 
   return (
