@@ -27,7 +27,7 @@ import {
   SiJenkins,
   SiKeycloak,
   SiJsonwebtokens,
-  SiOauth,
+  SiAuth0, // Changed from SiOauth to SiAuth0 since SiOauth doesn't exist
   SiOpenid,
   SiFigma,
   SiC,
@@ -75,7 +75,7 @@ const SkillsSection = () => {
       "CI/CD": <SiJenkins className="text-2xl text-gray-600" />,
     },
     security: {
-      "OAuth2.0": <SiOauth className="text-2xl text-blue-600" />,
+      "OAuth2.0": <SiAuth0 className="text-2xl text-blue-600" />, // Changed from SiOauth to SiAuth0
       "Keycloak": <SiKeycloak className="text-2xl text-red-600" />,
       "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
       "OpenID Connect": <SiOpenid className="text-2xl text-orange-600" />,
@@ -98,7 +98,7 @@ const SkillsSection = () => {
   };
 
   // Get all skill categories from translations
-  const categories = Object.keys(t("skills.categories", { returnObjects: true }));
+  const categories = Object.keys(t("skills.categories", { returnObjects: true }) as object);
 
   return (
     <section id="skills" className="py-16 bg-muted/30">
@@ -126,7 +126,7 @@ const SkillsSection = () => {
               </div>
               <CardContent className="p-6">
                 <div className="flex flex-wrap gap-4 justify-center">
-                  {t(`skills.items.${category}`, { returnObjects: true }).map((skill: string) => (
+                  {(t(`skills.items.${category}`, { returnObjects: true }) as string[]).map((skill: string) => (
                     <div
                       key={skill}
                       className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-muted transition-colors"

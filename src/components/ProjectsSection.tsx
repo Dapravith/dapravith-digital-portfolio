@@ -7,17 +7,29 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  category: string[];
+  links: {
+    github?: string;
+    demo?: string;
+    swagger?: string;
+  };
+}
+
 const ProjectsSection = () => {
   const { t } = useTranslation();
   const [filter, setFilter] = useState("all");
   
-  // Get project items from translations
-  const projects = t("projects.items", { returnObjects: true });
+  // Get project items from translations with proper typing
+  const projects = t("projects.items", { returnObjects: true }) as Project[];
   
   // Filter projects based on selected category
   const filteredProjects = filter === "all" 
     ? projects 
-    : projects.filter((project: any) => 
+    : projects.filter((project: Project) => 
         project.category.includes(filter)
       );
 
@@ -39,21 +51,21 @@ const ProjectsSection = () => {
         
         {/* Filter controls */}
         <div className="flex flex-wrap gap-2 justify-center mb-8">
-          {Object.entries(t("projects.filters", { returnObjects: true })).map(([key, value]) => (
+          {Object.entries(t("projects.filters", { returnObjects: true }) as Record<string, string>).map(([key, value]) => (
             <Button
               key={key}
               variant={filter === key ? "default" : "outline"}
               onClick={() => setFilter(key)}
               className="rounded-full text-sm px-4"
             >
-              {value as string}
+              {value}
             </Button>
           ))}
         </div>
 
         {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project: any, index: number) => (
+          {filteredProjects.map((project: Project, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
