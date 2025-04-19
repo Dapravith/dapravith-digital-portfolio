@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ThemeSwitcher from "./ThemeSwitcher";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
-  const { t } = useTranslation("nav");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -22,13 +19,13 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: t("home"), href: "#home" },
-    { name: t("about"), href: "#about" },
-    { name: t("experience"), href: "#experience" },
-    { name: t("education"), href: "#education" },
-    { name: t("skills"), href: "#skills" },
-    { name: t("projects"), href: "#projects" },
-    { name: t("contact"), href: "#contact" },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const handleMobileNavClick = () => {

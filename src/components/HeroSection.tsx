@@ -1,24 +1,17 @@
-
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { DownloadIcon, ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
-  const { t } = useTranslation();
-  const { language } = useLanguage();
   const [typedText, setTypedText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  const titleRef = useRef(t("hero.title"));
+  const titleRef = useRef("Full-Stack Developer | DevOps Engineer | Creator");
   
   // Typing effect
   useEffect(() => {
-    // Reset when language changes
     setTypedText("");
     setIsTypingComplete(false);
-    titleRef.current = t("hero.title");
     
     let currentIndex = 0;
     const textToType = titleRef.current;
@@ -34,7 +27,7 @@ const HeroSection = () => {
     }, 50);
     
     return () => clearInterval(typingInterval);
-  }, [t, language]);
+  }, []);
   
   // Animation variants
   const containerVariants = {
@@ -71,14 +64,14 @@ const HeroSection = () => {
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400"
             variants={itemVariants}
           >
-            {t("hero.greeting")}
+            Hi, I'm
           </motion.h2>
           
           <motion.h1 
             className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text"
             variants={itemVariants}
           >
-            {t("hero.name")}
+            Rotha Dapravith
           </motion.h1>
           
           <motion.div 
@@ -97,7 +90,7 @@ const HeroSection = () => {
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-xl"
             variants={itemVariants}
           >
-            {t("hero.description")}
+            A Full-Stack Developer with over 2 years of experience in building solutions.
           </motion.p>
           
           <motion.div 
@@ -106,11 +99,11 @@ const HeroSection = () => {
           >
             <Button className="button-gradient">
               <DownloadIcon className="mr-2 h-4 w-4" />
-              {t("hero.cta.resume")}
+              Download Resume
             </Button>
             
             <Button variant="outline">
-              {t("hero.cta.projects")}
+              View Projects
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>

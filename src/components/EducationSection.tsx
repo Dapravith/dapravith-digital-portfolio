@@ -1,11 +1,7 @@
-
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Calendar, GraduationCap, MapPin } from "lucide-react";
 
 const EducationSection = () => {
-  const { t } = useTranslation("education");
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,8 +23,18 @@ const EducationSection = () => {
   };
 
   const educationItems = [
-    "education1",
-    "education2"
+    {
+      degree: "Bachelor of Information Technology",
+      institution: "Cambodia Institute of Technology",
+      period: "September 2020 - February 2024",
+      location: "Phnom Penh, Cambodia"
+    },
+    {
+      degree: "High School Diploma",
+      institution: "Russey Keo High School",
+      period: "November 2013 - August 2019",
+      location: "Phnom Penh, Cambodia"
+    }
   ];
 
   return (
@@ -42,9 +48,9 @@ const EducationSection = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           <motion.div className="text-center" variants={itemVariants}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Education</h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-              {t("subtitle")}
+              Academic Background
             </p>
           </motion.div>
 
@@ -60,7 +66,7 @@ const EducationSection = () => {
             <div className="space-y-12">
               {educationItems.map((item, index) => (
                 <motion.div 
-                  key={item}
+                  key={index}
                   className="relative"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -73,24 +79,24 @@ const EducationSection = () => {
                   {/* Education Content */}
                   <div className="md:ml-12 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
                     <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
-                      <h3 className="text-xl font-bold">{t(`timeline.${item}.degree`)}</h3>
+                      <h3 className="text-xl font-bold">{item.degree}</h3>
                       <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
                         <Calendar className="h-4 w-4 mr-1" />
-                        <span>{t(`timeline.${item}.period`)}</span>
+                        <span>{item.period}</span>
                       </div>
                     </div>
 
                     <div className="flex items-center mb-4">
                       <GraduationCap className="h-4 w-4 text-primary mr-2" />
                       <div className="text-lg text-gray-700 dark:text-gray-300">
-                        {t(`timeline.${item}.institution`)}
+                        {item.institution}
                       </div>
                     </div>
 
                     <div className="flex items-center mb-4">
                       <MapPin className="h-4 w-4 text-primary mr-2" />
                       <div className="text-gray-600 dark:text-gray-400">
-                        {t(`timeline.${item}.location`)}
+                        {item.location}
                       </div>
                     </div>
                   </div>

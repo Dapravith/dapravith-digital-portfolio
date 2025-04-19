@@ -1,37 +1,76 @@
-
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  category: string[];
-  links: {
-    github?: string;
-    demo?: string;
-    swagger?: string;
-  };
-}
-
 const ProjectsSection = () => {
-  const { t } = useTranslation("projects");
   const [filter, setFilter] = useState("all");
   
-  // Get project items from translations with proper typing
-  const projects = t("items", { returnObjects: true }) as Project[];
+  const filters = {
+    all: "All",
+    frontend: "Frontend",
+    backend: "Backend",
+    devops: "DevOps"
+  };
   
-  // Filter projects based on selected category
+  const projects = [
+    {
+      title: "Single Sign-On and DevOps System",
+      description: "Developed a secure SSO system with OAuth2.0, Keycloak, and automated CI/CD pipelines using Jenkins, GitLab, Docker, and Nginx. APIs documented with Swagger UI.",
+      technologies: ["Spring Boot", "Keycloak", "Docker", "Jenkins", "Nginx"],
+      category: ["backend", "devops"],
+      links: {
+        github: "#",
+        demo: "#"
+      }
+    },
+    {
+      title: "E-commerce Management System",
+      description: "Comprehensive e-commerce solution with product management, user authentication, and order processing capabilities.",
+      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      category: ["frontend", "backend"],
+      links: {
+        github: "#",
+        demo: "#"
+      }
+    },
+    {
+      title: "Delivery Service Management System",
+      description: "A system for managing delivery services, including tracking, scheduling, and customer management.",
+      technologies: ["MERN Stack", "React Native", "QR Code"],
+      category: ["frontend", "backend"],
+      links: {
+        github: "#",
+        demo: "#"
+      }
+    },
+    {
+      title: "Decoration Shop Management System",
+      description: "Stock and sales management system for a decoration shop.",
+      technologies: ["React", "Spring Boot", "PostgreSQL"],
+      category: ["frontend", "backend"],
+      links: {
+        github: "#",
+        demo: "#"
+      }
+    },
+    {
+      title: "GIC Coffee Management System",
+      description: "System for managing coffee shop operations, including stock, sales, and customer management.",
+      technologies: ["Angular", "Spring Boot", "MySQL"],
+      category: ["frontend", "backend"],
+      links: {
+        github: "#",
+        demo: "#"
+      }
+    }
+  ];
+
   const filteredProjects = filter === "all" 
     ? projects 
-    : projects.filter((project: Project) => 
-        project.category.includes(filter)
-      );
+    : projects.filter(project => project.category.includes(filter));
 
   return (
     <section id="projects" className="py-16">
@@ -44,14 +83,14 @@ const ProjectsSection = () => {
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            {t("title")}
+            Projects
           </h2>
-          <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
+          <p className="text-muted-foreground text-lg">Key Works</p>
         </div>
         
         {/* Filter controls */}
         <div className="flex flex-wrap gap-2 justify-center mb-8">
-          {Object.entries(t("filters", { returnObjects: true }) as Record<string, string>).map(([key, value]) => (
+          {Object.entries(filters).map(([key, value]) => (
             <Button
               key={key}
               variant={filter === key ? "default" : "outline"}
@@ -65,7 +104,7 @@ const ProjectsSection = () => {
 
         {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project: Project, index: number) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -79,7 +118,7 @@ const ProjectsSection = () => {
                   
                   <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech: string, i: number) => (
+                      {project.technologies.map((tech, i) => (
                         <Badge key={i} variant="secondary" className="text-xs">
                           {tech}
                         </Badge>

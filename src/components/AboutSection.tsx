@@ -1,13 +1,9 @@
-
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { DownloadIcon } from "lucide-react";
 
 const AboutSection = () => {
-  const { t } = useTranslation(["about", "common"]);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -38,17 +34,14 @@ const AboutSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {/* Section Header */}
           <motion.div className="text-center" variants={itemVariants}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-              {t("subtitle")}
+              Professional Background
             </p>
           </motion.div>
 
-          {/* Content Grid */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Profile Photo */}
             <motion.div 
               className="order-2 md:order-1 flex justify-center"
               variants={itemVariants}
@@ -63,22 +56,20 @@ const AboutSection = () => {
               </Avatar>
             </motion.div>
 
-            {/* Text Content */}
             <motion.div 
               className="order-1 md:order-2 space-y-6"
               variants={itemVariants}
             >
               <p className="text-lg">
-                {t("paragraph1")}
+                I am a Full-Stack Developer with over 2 years of experience in building web applications and implementing DevOps solutions. With a strong foundation in Java Spring Boot, React, and modern DevOps practices, I focus on creating efficient, secure, and user-friendly applications.
               </p>
               <p>
-                {t("paragraph2")}
+                My experience includes developing enterprise applications, implementing Single Sign-On systems, and containerizing applications with Docker. I am passionate about writing clean, maintainable code and automating deployment processes.
               </p>
               <p>
-                {t("paragraph3")}
+                I hold a degree in Information Technology and have completed specialized training in DevOps, including containerization, CI/CD pipelines, and infrastructure as code.
               </p>
 
-              {/* Stats or Additional Info */}
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md hover-scale">
                   <h4 className="text-2xl font-bold gradient-text">2+</h4>

@@ -1,5 +1,3 @@
-
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -39,9 +37,18 @@ import {
 import { LuFileStack } from "react-icons/lu";
 
 const SkillsSection = () => {
-  const { t } = useTranslation("skills");
+  const categories = {
+    programming: "Programming Languages",
+    webDev: "Web Development",
+    databases: "Databases",
+    devOps: "DevOps",
+    security: "Security",
+    os: "Operating Systems",
+    design: "Design",
+    versionControl: "Version Control",
+    languages: "Languages"
+  };
 
-  // Define skill icons mapping
   const skillIcons = {
     programming: {
       "C": <SiC className="text-2xl text-blue-600" />,
@@ -101,9 +108,17 @@ const SkillsSection = () => {
     },
   };
 
-  // Get all skill categories from translations
-  const categoriesObj = t("categories", { returnObjects: true }) as Record<string, string>;
-  const categories = Object.keys(categoriesObj);
+  const skillItems = {
+    programming: ["C", "C++", "Python", "Java", "JavaScript", "TypeScript"],
+    webDev: ["ReactJS", "Angular", "Vue", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
+    databases: ["MySQL", "MongoDB", "PostgresQL"],
+    devOps: ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"],
+    security: ["OAuth2.0", "Keycloak", "JWT", "OpenID Connect", "SSO"],
+    os: ["Windows", "macOS", "Linux", "Ubuntu Server"],
+    design: ["Figma", "draw.io", "UML"],
+    versionControl: ["GitHub"],
+    languages: ["English", "Khmer"]
+  };
 
   return (
     <section id="skills" className="py-16 bg-muted/30">
@@ -116,46 +131,40 @@ const SkillsSection = () => {
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            {t("title")}
+            Skills
           </h2>
-          <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
+          <p className="text-muted-foreground text-lg">Technical Skills</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.map((category) => {
-            // Get skill items as array safely
-            const skillItems = t(`items.${category}`, { returnObjects: true });
-            const skillsArray = Array.isArray(skillItems) ? skillItems : [];
-            
-            return (
-              <Card key={category} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
-                <div className="bg-primary/10 p-4">
-                  <h3 className="text-xl font-semibold text-center">
-                    {t(`categories.${category}`)}
-                  </h3>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex flex-wrap gap-4 justify-center">
-                    {skillsArray.map((skill: string) => (
-                      <div
-                        key={skill}
-                        className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-muted transition-colors"
-                      >
-                        <div className="mb-2">
-                          {skillIcons[category as keyof typeof skillIcons]?.[skill] || 
-                            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                              {skill.charAt(0)}
-                            </div>
-                          }
-                        </div>
-                        <span className="text-sm font-medium">{skill}</span>
+          {Object.entries(categories).map(([category, categoryName]) => (
+            <Card key={category} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-primary/10 p-4">
+                <h3 className="text-xl font-semibold text-center">
+                  {categoryName}
+                </h3>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex flex-wrap gap-4 justify-center">
+                  {skillItems[category as keyof typeof skillItems]?.map((skill) => (
+                    <div
+                      key={skill}
+                      className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-muted transition-colors"
+                    >
+                      <div className="mb-2">
+                        {skillIcons[category as keyof typeof skillIcons]?.[skill] ||
+                          <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                            {skill.charAt(0)}
+                          </div>
+                        }
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+                      <span className="text-sm font-medium">{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </motion.div>
     </section>
