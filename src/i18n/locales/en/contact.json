@@ -14,5 +14,8 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "twitter": "Twitter"
+  },
+  "location": {
+    "title": "Location"
   }
 }

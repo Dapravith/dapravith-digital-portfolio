@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -26,8 +27,7 @@ const Navbar = () => {
     { name: "Experience", href: "#experience" },
     { name: "Education", href: "#education" },
     { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Projects", href: "#projects" }
   ];
 
   const handleMobileNavClick = () => {
@@ -81,7 +81,7 @@ const Navbar = () => {
             >
               <a
                 href={item.href}
-                className="text-foreground/80 hover:text-foreground transition-colors animated-underline py-1"
+                className="text-foreground/80 hover:text-primary transition-colors duration-200 hover:bg-primary/10 rounded-md px-3 py-2"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection(item.href.replace('#', ''));
@@ -106,9 +106,9 @@ const Navbar = () => {
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMobileMenuOpen ? (
-            <X className="h-6 w-6" />
+            <X className="h-6 w-6 text-foreground" />
           ) : (
-            <Menu className="h-6 w-6" />
+            <Menu className="h-6 w-6 text-foreground" />
           )}
         </Button>
       </div>
@@ -122,6 +122,16 @@ const Navbar = () => {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
           >
+            <div className="absolute top-4 right-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-foreground"
+              >
+                <X className="h-6 w-6" />
+              </Button>
+            </div>
             <div className="container max-w-7xl mx-auto px-4 py-8 flex flex-col gap-6">
               {navItems.map((item, index) => (
                 <motion.div
@@ -132,7 +142,7 @@ const Navbar = () => {
                 >
                   <a
                     href={item.href}
-                    className="block text-xl py-3 border-b border-border"
+                    className="block text-xl py-3 px-4 rounded-md hover:bg-primary/10 hover:text-primary transition-colors duration-200"
                     onClick={(e) => {
                       e.preventDefault();
                       scrollToSection(item.href.replace('#', ''));

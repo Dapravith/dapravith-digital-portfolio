@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send, MapPin, Phone } from "lucide-react";
@@ -41,7 +40,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-16 bg-muted/30">
       <motion.div
-        className="container max-w-7xl mx-auto px-4"
+        className="container max-w-4xl mx-auto px-4"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -54,115 +53,85 @@ const ContactSection = () => {
           <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Contact Form */}
-          <div>
-            <Card className="shadow-md">
-              <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      {t("form.name")}
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      {t("form.email")}
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      {t("form.message")}
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  
-                  <Button type="submit" disabled={isSubmitting} className="w-full">
-                    {isSubmitting ? (
-                      <div className="flex items-center">
-                        <div className="animate-spin mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
-                        <span>{t("form.submit")}</span>
-                      </div>
-                    ) : (
-                      <div className="flex items-center">
-                        <Send className="mr-2 h-4 w-4" />
-                        <span>{t("form.submit")}</span>
-                      </div>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-          
-          {/* Contact Information */}
-          <div>
-            <Card className="shadow-md">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <Mail className="h-5 w-5 mt-1 mr-3 text-primary" />
-                    <div>
-                      <h4 className="font-medium">Email</h4>
-                      <a 
-                        href="mailto:dapravithrotha@gmail.com" 
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        dapravithrotha@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <Phone className="h-5 w-5 mt-1 mr-3 text-primary" />
-                    <div>
-                      <h4 className="font-medium">Phone</h4>
-                      <a 
-                        href="tel:+85589337798" 
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        +855 089 933 7798
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <MapPin className="h-5 w-5 mt-1 mr-3 text-primary" />
-                    <div>
-                      <h4 className="font-medium">Address</h4>
-                      <p className="text-muted-foreground">
-                        Russeykeo, Phnom Penh, Cambodia
-                      </p>
-                    </div>
-                  </div>
+        <div className="grid grid-cols-1 gap-8">
+          <Card className="shadow-md">
+            <CardContent className="p-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    {t("form.name")}
+                  </label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    {t("form.email")}
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    {t("form.message")}
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                
+                <Button type="submit" disabled={isSubmitting} className="w-full">
+                  {isSubmitting ? (
+                    <div className="flex items-center">
+                      <div className="animate-spin mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
+                      <span>{t("form.submit")}</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center">
+                      <Send className="mr-2 h-4 w-4" />
+                      <span>{t("form.submit")}</span>
+                    </div>
+                  )}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+
+          <Card className="shadow-md">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold mb-4">{t("location.title")}</h3>
+              <div className="h-[300px] w-full rounded-lg overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62523.10126324276!2d104.85963722106!3d11.612173745887247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951add5e2cd81%3A0x171e0b69c7c6f7ba!2sRussey%20Keo%2C%20Phnom%20Penh%2C%20Cambodia!5e0!3m2!1sen!2sus!4v1713548123935!5m2!1sen!2sus"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={false} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={t("location.title")}
+                />
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </motion.div>
     </section>
