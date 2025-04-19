@@ -14,6 +14,16 @@ const HeroSection = () => {
     }
   };
 
+  const downloadResume = () => {
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Path to the resume file
+    link.download = 'Rotha_Dapravith_Resume.pdf'; // Default name for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative">
       <div className="container max-w-7xl mx-auto px-4 text-center">
@@ -54,7 +64,7 @@ const HeroSection = () => {
             transition={{ delay: 1.2 }}
             className="flex items-center justify-center gap-4 pt-8"
           >
-            <Button size="lg">
+            <Button size="lg" onClick={downloadResume}>
               {t("cta.resume")}
             </Button>
             <Button 
