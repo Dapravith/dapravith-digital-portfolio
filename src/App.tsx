@@ -6,13 +6,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// Initialize the query client
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      {/* UI Component Toasters */}
       <Toaster />
       <Sonner />
+      
+      {/* Router */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
