@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -38,6 +39,15 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Scroll to section function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId.replace('#', ''));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -73,6 +83,10 @@ const Navbar = () => {
               <a
                 href={item.href}
                 className="text-foreground/80 hover:text-foreground transition-colors animated-underline py-1"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
               >
                 {item.name}
               </a>
@@ -123,7 +137,11 @@ const Navbar = () => {
                   <a
                     href={item.href}
                     className="block text-xl py-3 border-b border-border"
-                    onClick={handleMobileNavClick}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.href);
+                      handleMobileNavClick();
+                    }}
                   >
                     {item.name}
                   </a>
