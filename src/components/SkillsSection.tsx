@@ -36,7 +36,7 @@ import {
   SiKubernetes,
   SiRedis,
   SiApachekafka,
-  SiVisualstudiocode,
+  SiVisualstudio,
   SiIntellijidea,
   SiPostman,
   SiSwagger,
@@ -99,7 +99,7 @@ const SkillsSection = () => {
       "Cloudflare": <SiCloudflare className="text-2xl text-orange-500" />,
     },
     tools: {
-      "VSCode": <SiVisualstudiocode className="text-2xl text-blue-500" />,
+      "VSCode": <SiVisualstudio className="text-2xl text-blue-500" />,
       "IntelliJ IDEA": <SiIntellijidea className="text-2xl text-red-600" />,
       "Git": <FaGitAlt className="text-2xl text-red-500" />,
       "Figma": <FaFigma className="text-2xl text-purple-500" />,
