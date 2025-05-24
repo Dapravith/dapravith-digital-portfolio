@@ -17,6 +17,7 @@ serve(async (req) => {
 
   try {
     console.log('Function invoked, checking API key...')
+    console.log('RESEND_API_KEY exists:', !!RESEND_API_KEY)
     
     // Check if API key is available
     if (!RESEND_API_KEY) {
@@ -100,6 +101,7 @@ serve(async (req) => {
 
   } catch (error) {
     console.error('Error sending email:', error)
+    console.error('Error stack:', error.stack)
     
     return new Response(
       JSON.stringify({ 
