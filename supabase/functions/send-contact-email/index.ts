@@ -3,19 +3,21 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+}
+
 serve(async (req) => {
   // Handle CORS
   if (req.method === 'OPTIONS') {
-    return new Response('ok', {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST',
-        'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-      }
-    })
+    return new Response('ok', { headers: corsHeaders })
   }
 
   try {
+    console.log('Starting send-contact-email function');
+    
     // Check if API key is available
     if (!RESEND_API_KEY) {
       console.error('RESEND_API_KEY is not set')
@@ -28,7 +30,7 @@ serve(async (req) => {
           status: 500,
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
+            ...corsHeaders,
           }
         }
       )
@@ -36,9 +38,11 @@ serve(async (req) => {
     
     // Parse request body
     const { name, email, message } = await req.json()
+    console.log('Received form data:', { name, email, message: message?.substring(0, 50) + '...' });
 
     // Validate required fields
     if (!name || !email || !message) {
+      console.error('Missing required fields:', { name: !!name, email: !!email, message: !!message });
       return new Response(
         JSON.stringify({ 
           error: 'Missing required fields',
@@ -48,11 +52,13 @@ serve(async (req) => {
           status: 400,
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
+            ...corsHeaders,
           }
         }
       )
     }
+
+    console.log('Sending email via Resend API...');
 
     // Send email using Resend
     const emailResponse = await fetch('https://api.resend.com/emails', {
@@ -77,10 +83,25 @@ serve(async (req) => {
       }),
     })
     
+    console.log('Resend API response status:', emailResponse.status);
+    
     if (!emailResponse.ok) {
       const errorText = await emailResponse.text()
-      console.error('Resend API error:', errorText)
-      throw new Error(`Resend API error: ${emailResponse.status}`)
+      console.error('Resend API error response:', errorText)
+      
+      return new Response(
+        JSON.stringify({ 
+          error: 'Failed to send email',
+          message: `Email service error: ${emailResponse.status}. Please try again later.`
+        }),
+        { 
+          status: 500,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders,
+          }
+        }
+      )
     }
 
     const emailResult = await emailResponse.json()
@@ -95,7 +116,7 @@ serve(async (req) => {
         status: 200,
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
+          ...corsHeaders,
         }
       }
     )
@@ -106,13 +127,13 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         error: 'Failed to send email',
-        message: 'There was an error sending your message. Please try again later.'
+        message: 'There was an unexpected error sending your message. Please try again later.'
       }),
       { 
         status: 500,
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
+          ...corsHeaders,
         }
       }
     )
