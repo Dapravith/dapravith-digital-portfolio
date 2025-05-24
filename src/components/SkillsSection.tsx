@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
@@ -36,7 +35,6 @@ import {
   SiKubernetes,
   SiRedis,
   SiApachekafka,
-  SiVisualstudiocode,
   SiIntellijidea,
   SiPostman,
   SiSwagger,
@@ -99,7 +97,7 @@ const SkillsSection = () => {
       "Cloudflare": <SiCloudflare className="text-2xl text-orange-500" />,
     },
     tools: {
-      "VSCode": <SiVisualstudiocode className="text-2xl text-blue-500" />,
+      "VSCode": <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">VS</div>,
       "IntelliJ IDEA": <SiIntellijidea className="text-2xl text-red-600" />,
       "Git": <FaGitAlt className="text-2xl text-red-500" />,
       "Figma": <FaFigma className="text-2xl text-purple-500" />,
