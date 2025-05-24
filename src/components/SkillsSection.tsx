@@ -30,6 +30,10 @@ import {
   SiTypescript,
   SiJavascript,
   SiBitbucket,
+  SiAnsible,
+  SiKubernetes,
+  SiRedis,
+  SiApachekafka,
 } from "react-icons/si";
 
 const SkillsSection = () => {
@@ -75,6 +79,11 @@ const SkillsSection = () => {
       "AWS": <FaAws className="text-2xl text-orange-400" />,
       "Bitbucket": <SiBitbucket className="text-2xl text-blue-600" />,
       "CI/CD": <SiJenkins className="text-2xl text-gray-600" />,
+      "Ansible": <SiAnsible className="text-2xl text-red-600" />,
+      "Kubernetes": <SiKubernetes className="text-2xl text-blue-500" />,
+      "Microservices": <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">MS</div>,
+      "Redis": <SiRedis className="text-2xl text-red-500" />,
+      "Kafka": <SiApachekafka className="text-2xl text-gray-800" />,
     }
   };
 

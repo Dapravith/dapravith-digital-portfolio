@@ -10,6 +10,6 @@
   "items": {
     "webDev": ["Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
     "databases": ["MySQL", "MongoDB", "PostgresQL"],
-    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD"]
+    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD", "Ansible", "Kubernetes", "Microservices", "Redis", "Kafka"]
   }
 }
