@@ -30,7 +30,7 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
           name: formData.name,
           email: formData.email,
@@ -39,7 +39,13 @@ const ContactSection = () => {
       });
 
       if (error) {
+        console.error('Supabase function error:', error);
         throw error;
+      }
+
+      if (data?.error) {
+        console.error('Function returned error:', data);
+        throw new Error(data.message || data.error);
       }
 
       toast({
