@@ -16,10 +16,29 @@ serve(async (req) => {
   }
 
   try {
+    console.log('Function invoked, checking API key...')
+    
+    // Check if API key is available
+    if (!RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set')
+      return new Response(
+        JSON.stringify({ error: 'API key not configured' }),
+        { 
+          status: 500,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+          }
+        }
+      )
+    }
+
     const { name, email, message } = await req.json()
+    console.log('Request data received:', { name, email, messageLength: message?.length })
 
     // Validate required fields
     if (!name || !email || !message) {
+      console.error('Missing required fields:', { name: !!name, email: !!email, message: !!message })
       return new Response(
         JSON.stringify({ error: 'Missing required fields' }),
         { 
@@ -32,6 +51,8 @@ serve(async (req) => {
       )
     }
 
+    console.log('Sending email via Resend...')
+    
     // Send email using Resend
     const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -55,9 +76,16 @@ serve(async (req) => {
       }),
     })
 
+    console.log('Resend API response status:', emailResponse.status)
+    
     if (!emailResponse.ok) {
-      throw new Error('Failed to send email')
+      const errorText = await emailResponse.text()
+      console.error('Resend API error:', errorText)
+      throw new Error(`Resend API error: ${emailResponse.status} - ${errorText}`)
     }
+
+    const emailResult = await emailResponse.json()
+    console.log('Email sent successfully:', emailResult)
 
     return new Response(
       JSON.stringify({ success: true, message: 'Email sent successfully' }),
@@ -74,7 +102,10 @@ serve(async (req) => {
     console.error('Error sending email:', error)
     
     return new Response(
-      JSON.stringify({ error: 'Failed to send email' }),
+      JSON.stringify({ 
+        error: 'Failed to send email',
+        details: error.message || 'Unknown error'
+      }),
       { 
         status: 500,
         headers: {
