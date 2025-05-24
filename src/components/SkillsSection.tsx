@@ -11,6 +11,8 @@ import {
   FaAws,
   FaAngular,
   FaVuejs,
+  FaGitAlt,
+  FaFigma,
 } from "react-icons/fa";
 import {
   SiSpringboot,
@@ -34,6 +36,13 @@ import {
   SiKubernetes,
   SiRedis,
   SiApachekafka,
+  SiVisualstudiocode,
+  SiIntellijidea,
+  SiPostman,
+  SiSwagger,
+  SiVercel,
+  SiCloudflare,
+  SiGithubactions,
 } from "react-icons/si";
 
 const SkillsSection = () => {
@@ -42,7 +51,8 @@ const SkillsSection = () => {
   const categories = {
     webDev: t("categories.webDev"),
     databases: t("categories.databases"),
-    devOps: t("categories.devOps")
+    devOps: t("categories.devOps"),
+    tools: t("categories.tools")
   };
 
   const skillIcons = {
@@ -84,6 +94,19 @@ const SkillsSection = () => {
       "Microservices": <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">MS</div>,
       "Redis": <SiRedis className="text-2xl text-red-500" />,
       "Kafka": <SiApachekafka className="text-2xl text-gray-800" />,
+      "GitHub Actions": <SiGithubactions className="text-2xl text-gray-800" />,
+      "Vercel": <SiVercel className="text-2xl text-black" />,
+      "Cloudflare": <SiCloudflare className="text-2xl text-orange-500" />,
+    },
+    tools: {
+      "VSCode": <SiVisualstudiocode className="text-2xl text-blue-500" />,
+      "IntelliJ IDEA": <SiIntellijidea className="text-2xl text-red-600" />,
+      "Git": <FaGitAlt className="text-2xl text-red-500" />,
+      "Figma": <FaFigma className="text-2xl text-purple-500" />,
+      "Postman": <SiPostman className="text-2xl text-orange-500" />,
+      "Swagger API": <SiSwagger className="text-2xl text-green-500" />,
+      "Draw.io": <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">D</div>,
+      "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
     }
   };
 
@@ -91,7 +114,8 @@ const SkillsSection = () => {
   const skillItems = {
     webDev: t("items.webDev", { returnObjects: true }) as string[],
     databases: t("items.databases", { returnObjects: true }) as string[],
-    devOps: t("items.devOps", { returnObjects: true }) as string[]
+    devOps: t("items.devOps", { returnObjects: true }) as string[],
+    tools: t("items.tools", { returnObjects: true }) as string[]
   };
 
   return (
@@ -110,7 +134,7 @@ const SkillsSection = () => {
           <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(categories).map(([category, categoryName]) => (
             <Card key={category} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
               <div className="bg-primary/10 p-4">

@@ -5,11 +5,13 @@
   "categories": {
     "webDev": "ការអភិវឌ្ឍវេបសាយ", 
     "databases": "មូលដ្ឋានទិន្នន័យ",
-    "devOps": "ប្រព័ន្ធស្វ័យប្រវិត្តកម្ម"
+    "devOps": "ប្រព័ន្ធស្វ័យប្រវិត្តកម្ម",
+    "tools": "ឧបករណ៍អភិវឌ្ឍន៍"
   },
   "items": {
     "webDev": ["Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
     "databases": ["MySQL", "MongoDB", "PostgresQL"],
-    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD", "Ansible", "Kubernetes", "Microservices", "Redis", "Kafka"]
+    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD", "Ansible", "Kubernetes", "Microservices", "Redis", "Kafka", "GitHub Actions", "Vercel", "Cloudflare"],
+    "tools": ["VSCode", "IntelliJ IDEA", "Git", "Figma", "Postman", "Swagger API", "Draw.io", "JWT"]
   }
 }
