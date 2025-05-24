@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { t } = useTranslation("contact");
@@ -30,6 +30,8 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
+      console.log('Submitting contact form with data:', formData);
+      
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
           name: formData.name,
@@ -37,6 +39,8 @@ const ContactSection = () => {
           message: formData.message,
         },
       });
+
+      console.log('Supabase function response:', { data, error });
 
       if (error) {
         console.error('Supabase function error:', error);
@@ -48,15 +52,19 @@ const ContactSection = () => {
         throw new Error(data.message || data.error);
       }
 
+      console.log('Email sent successfully!');
       toast({
         title: t("success"),
+        description: "Your message has been sent successfully!",
         variant: "default",
       });
       setFormData({ name: "", email: "", message: "" });
+      
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
         title: t("error"),
+        description: "Failed to send your message. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -94,6 +102,7 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    placeholder="Your name"
                   />
                 </div>
                 
@@ -108,6 +117,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    placeholder="your.email@example.com"
                   />
                 </div>
                 
@@ -122,6 +132,7 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    placeholder="Your message..."
                   />
                 </div>
                 
@@ -129,7 +140,7 @@ const ContactSection = () => {
                   {isSubmitting ? (
                     <div className="flex items-center">
                       <div className="animate-spin mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
-                      <span>{t("form.submit")}</span>
+                      <span>Sending...</span>
                     </div>
                   ) : (
                     <div className="flex items-center">
