@@ -1,17 +1,17 @@
 
 {
-  "title": "Skills",
+  "title": "Skills & Technologies",
   "subtitle": "Technology Stack I Worked With",
   "categories": {
-    "webDev": "Web Development", 
-    "databases": "Databases",
-    "devOps": "DevOps",
-    "tools": "Development Tools"
+    "backendApis": "Backend & APIs",
+    "databasesMessaging": "Databases & Messaging", 
+    "devopsCloud": "DevOps & Cloud",
+    "qualityMonitoring": "Quality & Monitoring"
   },
-  "items": {
-    "webDev": ["Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
-    "databases": ["MySQL", "MongoDB", "PostgresQL"],
-    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD", "Ansible", "Kubernetes", "Microservices", "Redis", "Kafka", "GitHub Actions", "Vercel", "Cloudflare"],
-    "tools": ["VSCode", "IntelliJ IDEA", "Git", "Figma", "Postman", "Swagger API", "Draw.io", "JWT"]
+  "descriptions": {
+    "backendApis": "Expertise in building scalable and robust backend systems with modern frameworks and tools.",
+    "databasesMessaging": "Strong knowledge of various database systems and message brokers for different use cases.",
+    "devopsCloud": "Experience with modern DevOps practices and cloud infrastructure management.",
+    "qualityMonitoring": "Focus on code quality, testing, and system monitoring for reliable applications."
   }
 }
