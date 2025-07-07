@@ -117,7 +117,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="your.email@example.com"
+                    placeholder="your email"
                   />
                 </div>
                 
