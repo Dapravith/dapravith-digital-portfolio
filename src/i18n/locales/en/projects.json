@@ -10,9 +10,9 @@
   },
   "items": [
     {
-      "title": "Single Sign-On System and DevOps",
-      "description": "Developed a secure SSO system with OAuth2.0, Keycloak, and automated CI/CD pipelines using Jenkins, GitLab, Docker, and Nginx. APIs documented with Swagger UI.",
-      "technologies": ["Spring Boot", "Keycloak", "Docker", "Jenkins", "Nginx"],
+      "title": "Single Sign-On System and DevOps (Final Year Internship Thesis)",
+      "description": "Secure web client application with SSO system. Authorized token with OAuth2.0. Record user session, applications and device activity status. CI/CD, GitLab, Docker, Nginx and Jenkins for automated deployment.",
+      "technologies": ["OAuth2.0", "GitLab", "Docker", "Nginx", "Jenkins", "CI/CD"],
       "category": ["backend", "devops"],
       "links": {
         "github": "#",
@@ -21,18 +21,28 @@
     },
     {
       "title": "E-Commerce Management System",
-      "description": "A comprehensive e-commerce solution with product management, user authentication, and order processing capabilities.",
-      "technologies": ["VueJS", "PHP", "Laravel", "MYSQL"],
+      "description": "E-commerce platform built with ReactJS, Tailwind CSS, and ExpressJS. Using MongoDB database with GitLab version control and JWT Authentication.",
+      "technologies": ["ReactJS", "Tailwind CSS", "ExpressJS", "MongoDB", "JWT", "GitLab"],
       "category": ["frontend", "backend"],
       "links": {
-        "github": "https://github.com/Dapravith/E-Commerce-Computer-Shop-Laravel.git",
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "title": "Delivery Service Management System (Year4 Internship Thesis)",
+      "description": "UI Design with Figma. Using ReactJS and Integrate REST API ExpressJS. Build QR-Code on mobile device use React-Native.",
+      "technologies": ["Figma", "ReactJS", "ExpressJS", "React-Native", "REST API"],
+      "category": ["frontend", "backend"],
+      "links": {
+        "github": "#",
         "demo": "#"
       }
     },
     {
       "title": "Accessories Store Management System",
-      "description": "An inventory and sales management system for accessories stores.",
-      "technologies": ["React", "Spring Boot", "PostgreSQL"],
+      "description": "Full-stack e-commerce solution with VueJS frontend, Laravel backend, MySQL database, and hosted on Hostinger.",
+      "technologies": ["VueJS", "Tailwind CSS", "Laravel", "MySQL", "Hostinger"],
       "category": ["frontend", "backend"],
       "links": {
         "github": "#",
@@ -41,11 +51,21 @@
     },
     {
       "title": "GIC Coffee Management System",
-      "description": "A system for managing coffee shop operations, including inventory, sales, and customer management.",
-      "technologies": ["Thyleaf", "Spring Boot", "MySQL", "TailwindCSS"],
+      "description": "Coffee shop management system with Java Spring Boot backend, MySQL database, Spring Security implementation, and HTML/Tailwind CSS frontend.",
+      "technologies": ["Java", "Spring Boot", "MySQL", "Spring Security", "HTML", "Tailwind CSS"],
       "category": ["backend"],
       "links": {
-        "github": "https://github.com/Dapravith/Midterm-SE-GIC-Cafe-Project-Group16.git",
+        "github": "#",
+        "demo": "#"
+      }
+    },
+    {
+      "title": "Microservices Project",
+      "description": "Modern microservices architecture with Java 21+, Spring Boot, Maven. Containerized with Docker and Docker Compose. Orchestrated with Kubernetes (Minikube, kubectl). OAuth2 security with planned Keycloak integration.",
+      "technologies": ["Java 21+", "Spring Boot", "Maven", "Docker", "Kubernetes", "OAuth2", "Keycloak"],
+      "category": ["backend", "devops"],
+      "links": {
+        "github": "#",
         "demo": "#"
       }
     }
