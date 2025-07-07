@@ -16,6 +16,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,6 +37,7 @@ const ContactSection = () => {
         body: {
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           message: formData.message,
         },
       });
@@ -58,7 +60,7 @@ const ContactSection = () => {
         description: "Your message has been sent successfully!",
         variant: "default",
       });
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", message: "" });
       
     } catch (error) {
       console.error('Error sending email:', error);
@@ -117,7 +119,21 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="your.email@example.com"
+                    placeholder="your.verify.email@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                    {t("form.phone")}
+                  </label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+1 (555) 123-4567"
                   />
                 </div>
                 

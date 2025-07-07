@@ -44,11 +44,5 @@ export const skillLevels = {
     "Prometheus": 80,
     "Git/GitHub": 90,
     "SonarQube": 85
-  },
-  systemArchitect: {
-    "Microservices Architecture": 90,
-    "Distributed Systems": 85,
-    "System Design": 90,
-    "Scalable Architecture": 90
   }
 };

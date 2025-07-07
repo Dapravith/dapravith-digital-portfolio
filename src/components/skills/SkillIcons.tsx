@@ -80,11 +80,5 @@ export const skillIcons = {
     "Prometheus": <SiPrometheus className="text-2xl text-orange-600" />,
     "Git/GitHub": <SiGithub className="text-2xl text-gray-800 dark:text-white" />,
     "SonarQube": <SiSonarqube className="text-2xl text-blue-500" />,
-  },
-  systemArchitect: {
-    "Microservices Architecture": <div className="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs font-bold">μS</div>,
-    "Distributed Systems": <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold">DS</div>,
-    "System Design": <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-xs font-bold">SD</div>,
-    "Scalable Architecture": <div className="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center text-xs font-bold">SA</div>,
   }
 };
