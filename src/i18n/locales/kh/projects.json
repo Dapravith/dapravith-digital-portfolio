@@ -65,7 +65,7 @@
       "technologies": ["Java 21+", "Spring Boot", "Maven", "Docker", "Kubernetes", "OAuth2", "Keycloak"],
       "category": ["backend", "devops"],
       "links": {
-        "github": "#",
+        "github": "https://github.com/Dapravith/microservices-enterprise-system",
         "demo": "#"
       }
     }
