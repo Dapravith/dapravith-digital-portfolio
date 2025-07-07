@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -70,6 +69,7 @@ const SkillsSection = () => {
       "ExpressJS": <SiExpress className="text-2xl text-gray-600" />,
       "NestJS": <SiNestjs className="text-2xl text-red-600" />,
       "Spring Boot": <SiSpringboot className="text-2xl text-green-600" />,
+      "Master Authentication and Authorization": <SiKeycloak className="text-2xl text-blue-600" />,
       "OAuth2.0": <SiAuth0 className="text-2xl text-blue-600" />,
       "Keycloak": <SiKeycloak className="text-2xl text-red-600" />,
       "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
@@ -97,6 +97,7 @@ const SkillsSection = () => {
       "GitHub Actions": <SiGithubactions className="text-2xl text-gray-800" />,
       "Vercel": <SiVercel className="text-2xl text-black" />,
       "Cloudflare": <SiCloudflare className="text-2xl text-orange-500" />,
+      "Deployment": <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">D</div>,
     },
     tools: {
       "VSCode": <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">VS</div>,
@@ -121,7 +122,9 @@ const SkillsSection = () => {
       "NodeJS": 80,
       "ExpressJS": 85,
       "NestJS": 75,
-      "Spring Boot": 90
+      "Spring Boot": 90,
+      "Master Authentication and Authorization": 85,
+      "JWT": 80
     },
     databases: {
       "MySQL": 85,
@@ -135,7 +138,8 @@ const SkillsSection = () => {
       "AWS": 70,
       "Kubernetes": 65,
       "Redis": 70,
-      "Kafka": 60
+      "Kafka": 60,
+      "Deployment": 80
     },
     tools: {
       "VSCode": 90,
@@ -143,11 +147,11 @@ const SkillsSection = () => {
       "Git": 90,
       "Figma": 70,
       "Postman": 85,
-      "Swagger API": 80
+      "Swagger API": 80,
+      "JWT": 80
     }
   };
 
-  // Get skill items from translation
   const skillItems = {
     webDev: t("items.webDev", { returnObjects: true }) as string[],
     databases: t("items.databases", { returnObjects: true }) as string[],
