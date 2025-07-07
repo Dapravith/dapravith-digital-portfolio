@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -20,6 +20,8 @@ const ContactSection = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const lastSubmissionTime = useRef<number>(0);
+  const RATE_LIMIT_MS = 30000; // 30 seconds between submissions
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -28,11 +30,22 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Rate limiting check
+    const now = Date.now();
+    if (now - lastSubmissionTime.current < RATE_LIMIT_MS) {
+      const remainingTime = Math.ceil((RATE_LIMIT_MS - (now - lastSubmissionTime.current)) / 1000);
+      toast({
+        title: "Please wait",
+        description: `You can submit another message in ${remainingTime} seconds.`,
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
-      console.log('Submitting contact form with data:', formData);
-      
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
           name: formData.name,
@@ -42,19 +55,15 @@ const ContactSection = () => {
         },
       });
 
-      console.log('Supabase function response:', { data, error });
-
       if (error) {
-        console.error('Supabase function error:', error);
         throw error;
       }
 
       if (data?.error) {
-        console.error('Function returned error:', data);
         throw new Error(data.message || data.error);
       }
 
-      console.log('Email sent successfully!');
+      lastSubmissionTime.current = now;
       toast({
         title: t("success"),
         description: "Your message has been sent successfully!",
@@ -105,6 +114,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     placeholder="Your name"
+                    maxLength={100}
                   />
                 </div>
                 
@@ -120,6 +130,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     placeholder="your.verify.email@example.com"
+                    maxLength={254}
                   />
                 </div>
 
@@ -134,6 +145,7 @@ const ContactSection = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+1 (555) 123-4567"
+                    maxLength={20}
                   />
                 </div>
                 
@@ -149,6 +161,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     placeholder="Your message..."
+                    maxLength={2000}
                   />
                 </div>
                 
