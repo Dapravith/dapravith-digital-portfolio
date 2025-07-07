@@ -9,9 +9,9 @@
     "tools": "ឧបករណ៍អភិវឌ្ឍន៍"
   },
   "items": {
-    "webDev": ["Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
+    "webDev": ["Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "NodeJS", "ExpressJS", "NestJS", "Spring Boot", "Master Authentication and Authorization", "JWT"],
     "databases": ["MySQL", "MongoDB", "PostgresQL"],
-    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD", "Ansible", "Kubernetes", "Microservices", "Redis", "Kafka", "GitHub Actions", "Vercel", "Cloudflare"],
+    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD", "Ansible", "Kubernetes", "Microservices", "Redis", "Kafka", "GitHub Actions", "Vercel", "Cloudflare", "Deployment"],
     "tools": ["VSCode", "IntelliJ IDEA", "Git", "Figma", "Postman", "Swagger API", "Draw.io", "JWT"]
   }
 }
