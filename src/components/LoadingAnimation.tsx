@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import ThreeJSLoadingText from "./ThreeJSLoadingText";
 
 interface LoadingAnimationProps {
   onComplete: () => void;
@@ -60,7 +59,22 @@ const LoadingAnimation = ({ onComplete }: LoadingAnimationProps) => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <ThreeJSLoadingText text="ROTHA" />
+        <motion.h1 
+          className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary via-purple-500 to-secondary bg-clip-text text-transparent"
+          animate={{ 
+            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          style={{
+            backgroundSize: "200% 200%"
+          }}
+        >
+          ROTHA
+        </motion.h1>
       </motion.div>
       
       <div className="w-64 h-36 bg-gray-100 dark:bg-gray-800 rounded-md p-3 overflow-hidden mb-8 font-mono text-xs">
