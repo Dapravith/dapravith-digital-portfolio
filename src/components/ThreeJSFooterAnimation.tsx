@@ -8,12 +8,12 @@ const AnimatedParticles = () => {
   const ref = useRef<THREE.Points>(null);
   
   const particles = useMemo(() => {
-    const temp = new Float32Array(100 * 3);
-    for (let i = 0; i < 100; i++) {
+    const temp = new Float32Array(500 * 3);
+    for (let i = 0; i < 500; i++) {
       temp.set([
+        (Math.random() - 0.5) * 20,
         (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 5,
-        (Math.random() - 0.5) * 10
+        (Math.random() - 0.5) * 20
       ], i * 3);
     }
     return temp;

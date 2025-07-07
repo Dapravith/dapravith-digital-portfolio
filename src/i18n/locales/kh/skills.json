@@ -1,17 +1,17 @@
 
 {
-  "title": "ជំនាញ និងបច្ចេកវិទ្យា",
+  "title": "ជំនាញ",
   "subtitle": "បច្ចេកវិទ្យាដែលខ្ញុំធ្លាប់បានប្រើប្រាស់",
   "categories": {
-    "backendApis": "ប្រព័ន្ធខាងក្រោយ និង APIs",
-    "databasesMessaging": "មូលដ្ឋានទិន្នន័យ និងការផ្ញើសារ", 
-    "devopsCloud": "DevOps និងប្រព័ន្ធពពក",
-    "qualityMonitoring": "គុណភាព និងការតាមដាន"
+    "webDev": "ការអភិវឌ្ឍវេបសាយ", 
+    "databases": "មូលដ្ឋានទិន្នន័យ",
+    "devOps": "ប្រព័ន្ធស្វ័យប្រវិត្តកម្ម",
+    "tools": "ឧបករណ៍អភិវឌ្ឍន៍"
   },
-  "descriptions": {
-    "backendApis": "ជំនាញក្នុងការបង្កើតប្រព័ន្ធខាងក្រោយដែលរឹងមាំ និងអាចពង្រីកបានជាមួយនឹងគ្រោងការណ៍ទំនើប។",
-    "databasesMessaging": "ចំណេះដឹងខ្លាំងអំពីប្រព័ន្ធមូលដ្ឋានទិន្នន័យផ្សេងៗ និងឧបករណ៍ផ្ញើសារសម្រាប់ករណីប្រើប្រាស់ផ្សេងៗ។",
-    "devopsCloud": "បទពិសោធន៍ជាមួយនឹងការអនុវត្ត DevOps ទំនើប និងការគ្រប់គ្រងហេដ្ឋារចនាសម្ព័ន្ធពពក។",
-    "qualityMonitoring": "ផ្តោតលើគុណភាពកូដ ការធ្វើតេស្ត និងការតាមដានប្រព័ន្ធសម្រាប់កម្មវិធីដែលអាចទុកចិត្តបាន។"
+  "items": {
+    "webDev": ["Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "NodeJS", "ExpressJS", "NestJS", "Spring Boot"],
+    "databases": ["MySQL", "MongoDB", "PostgresQL"],
+    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD", "Ansible", "Kubernetes", "Microservices", "Redis", "Kafka", "GitHub Actions", "Vercel", "Cloudflare"],
+    "tools": ["VSCode", "IntelliJ IDEA", "Git", "Figma", "Postman", "Swagger API", "Draw.io", "JWT"]
   }
 }
