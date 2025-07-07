@@ -17,7 +17,7 @@ const HeroSection = () => {
   const downloadResume = () => {
     const link = document.createElement('a');
     link.href = '/ROTHA_Dapravith_latest_resume.pdf';
-    link.download = 'Rotha_Dapravith_Resume.pdf';
+    link.download = 'ROTHA_Dapravith_latest_resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
