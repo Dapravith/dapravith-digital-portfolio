@@ -91,13 +91,9 @@ const SkillsSection = () => {
       "CI/CD": <SiJenkins className="text-2xl text-gray-600" />,
       "Ansible": <SiAnsible className="text-2xl text-red-600" />,
       "Kubernetes": <SiKubernetes className="text-2xl text-blue-500" />,
-      "Microservices": <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">MS</div>,
       "Redis": <SiRedis className="text-2xl text-red-500" />,
       "Kafka": <SiApachekafka className="text-2xl text-gray-800" />,
       "GitHub Actions": <SiGithubactions className="text-2xl text-gray-800" />,
-      "Vercel": <SiVercel className="text-2xl text-black" />,
-      "Cloudflare": <SiCloudflare className="text-2xl text-orange-500" />,
-      "Deployment": <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">D</div>,
     },
     tools: {
       "VSCode": <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">VS</div>,
@@ -107,7 +103,6 @@ const SkillsSection = () => {
       "Postman": <SiPostman className="text-2xl text-orange-500" />,
       "Swagger API": <SiSwagger className="text-2xl text-green-500" />,
       "Draw.io": <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">D</div>,
-      "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
     }
   };
 
@@ -124,7 +119,7 @@ const SkillsSection = () => {
       "NestJS": 75,
       "Spring Boot": 90,
       "Master Authentication and Authorization": 85,
-      "JWT": 80
+      "OAuth2.0": 80
     },
     databases: {
       "MySQL": 85,
@@ -138,8 +133,7 @@ const SkillsSection = () => {
       "AWS": 70,
       "Kubernetes": 65,
       "Redis": 70,
-      "Kafka": 60,
-      "Deployment": 80
+      "Kafka": 60
     },
     tools: {
       "VSCode": 90,
@@ -147,8 +141,7 @@ const SkillsSection = () => {
       "Git": 90,
       "Figma": 70,
       "Postman": 85,
-      "Swagger API": 80,
-      "JWT": 80
+      "Swagger API": 80
     }
   };
 
