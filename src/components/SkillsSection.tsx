@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -13,6 +14,7 @@ import {
   FaVuejs,
   FaGitAlt,
   FaFigma,
+  FaLinux,
 } from "react-icons/fa";
 import {
   SiSpringboot,
@@ -42,121 +44,146 @@ import {
   SiVercel,
   SiCloudflare,
   SiGithubactions,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiShadcnui,
+  SiGraphql,
+  SiRabbitmq,
+  SiElasticsearch,
+  SiPrometheus,
+  SiGrafana,
+  SiGithub,
+  SiSonarqube,
 } from "react-icons/si";
 
 const SkillsSection = () => {
   const { t } = useTranslation("skills");
 
   const categories = {
-    webDev: t("categories.webDev"),
+    frontend: t("categories.frontend"),
+    backendApis: t("categories.backendApis"),
     databases: t("categories.databases"),
-    devOps: t("categories.devOps"),
-    tools: t("categories.tools")
+    devOpsCloud: t("categories.devOpsCloud"),
+    qualityMonitoring: t("categories.qualityMonitoring"),
+    systemArchitect: t("categories.systemArchitect")
   };
 
   const skillIcons = {
-    webDev: {
-      "C": <SiC className="text-2xl text-blue-600" />,
-      "C++": <SiCplusplus className="text-2xl text-blue-700" />,
-      "Python": <FaPython className="text-2xl text-yellow-600" />,
-      "Java": <FaJava className="text-2xl text-red-600" />,
-      "JavaScript": <SiJavascript className="text-2xl text-yellow-400" />,
-      "TypeScript": <SiTypescript className="text-2xl text-blue-500" />,
-      "ReactJS": <FaReact className="text-2xl text-blue-400" />,
+    frontend: {
+      "React": <FaReact className="text-2xl text-blue-400" />,
       "Angular": <FaAngular className="text-2xl text-red-500" />,
-      "Vue": <FaVuejs className="text-2xl text-green-500" />,
-      "NodeJS": <FaNodeJs className="text-2xl text-green-600" />,
-      "ExpressJS": <SiExpress className="text-2xl text-gray-600" />,
-      "NestJS": <SiNestjs className="text-2xl text-red-600" />,
+      "Next.js": <SiNextdotjs className="text-2xl text-black dark:text-white" />,
+      "Tailwind CSS": <SiTailwindcss className="text-2xl text-blue-400" />,
+      "ShadCN UI": <div className="w-8 h-8 rounded-full bg-gray-800 text-white flex items-center justify-center text-xs font-bold">UI</div>,
+      "TypeScript": <SiTypescript className="text-2xl text-blue-500" />,
+      "JavaScript": <SiJavascript className="text-2xl text-yellow-400" />,
+    },
+    backendApis: {
+      "Java": <FaJava className="text-2xl text-red-600" />,
       "Spring Boot": <SiSpringboot className="text-2xl text-green-600" />,
-      "Master Authentication and Authorization": <SiKeycloak className="text-2xl text-blue-600" />,
-      "OAuth2.0": <SiAuth0 className="text-2xl text-blue-600" />,
-      "Keycloak": <SiKeycloak className="text-2xl text-red-600" />,
+      "Node.js": <FaNodeJs className="text-2xl text-green-600" />,
+      "NestJS": <SiNestjs className="text-2xl text-red-600" />,
       "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
-      "OpenID Connect": <SiOpenid className="text-2xl text-orange-600" />,
-      "SSO": <SiKeycloak className="text-2xl text-green-600" />,
+      "OAuth2.0": <SiAuth0 className="text-2xl text-blue-600" />,
+      "REST APIs": <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-xs font-bold">API</div>,
+      "GraphQL": <SiGraphql className="text-2xl text-pink-500" />,
     },
     databases: {
       "MySQL": <SiMysql className="text-2xl text-blue-600" />,
       "MongoDB": <SiMongodb className="text-2xl text-green-600" />,
-      "PostgresQL": <SiPostgresql className="text-2xl text-blue-400" />,
+      "PostgreSQL": <SiPostgresql className="text-2xl text-blue-400" />,
+      "Redis": <SiRedis className="text-2xl text-red-500" />,
+      "Kafka": <SiApachekafka className="text-2xl text-gray-800" />,
+      "RabbitMQ": <SiRabbitmq className="text-2xl text-orange-500" />,
+      "Elasticsearch": <SiElasticsearch className="text-2xl text-yellow-500" />,
     },
-    devOps: {
+    devOpsCloud: {
       "Docker": <FaDocker className="text-2xl text-blue-500" />,
       "Nginx": <SiNginx className="text-2xl text-green-600" />,
       "Jenkins": <SiJenkins className="text-2xl text-red-500" />,
-      "Portainer.io": <FaDocker className="text-2xl text-blue-400" />,
-      "AWS": <FaAws className="text-2xl text-orange-400" />,
-      "Bitbucket": <SiBitbucket className="text-2xl text-blue-600" />,
+      "SSL Certbot Let's Encrypt": <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold">SSL</div>,
       "CI/CD": <SiJenkins className="text-2xl text-gray-600" />,
       "Ansible": <SiAnsible className="text-2xl text-red-600" />,
       "Kubernetes": <SiKubernetes className="text-2xl text-blue-500" />,
-      "Microservices": <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">MS</div>,
-      "Redis": <SiRedis className="text-2xl text-red-500" />,
-      "Kafka": <SiApachekafka className="text-2xl text-gray-800" />,
-      "GitHub Actions": <SiGithubactions className="text-2xl text-gray-800" />,
-      "Vercel": <SiVercel className="text-2xl text-black" />,
-      "Cloudflare": <SiCloudflare className="text-2xl text-orange-500" />,
-      "Deployment": <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">D</div>,
+      "Linux": <FaLinux className="text-2xl text-black dark:text-white" />,
+      "AWS": <FaAws className="text-2xl text-orange-400" />,
     },
-    tools: {
-      "VSCode": <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">VS</div>,
-      "IntelliJ IDEA": <SiIntellijidea className="text-2xl text-red-600" />,
-      "Git": <FaGitAlt className="text-2xl text-red-500" />,
-      "Figma": <FaFigma className="text-2xl text-purple-500" />,
-      "Postman": <SiPostman className="text-2xl text-orange-500" />,
-      "Swagger API": <SiSwagger className="text-2xl text-green-500" />,
-      "Draw.io": <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">D</div>,
-      "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
+    qualityMonitoring: {
+      "Grafana": <SiGrafana className="text-2xl text-orange-500" />,
+      "Prometheus": <SiPrometheus className="text-2xl text-orange-600" />,
+      "Git/GitHub": <SiGithub className="text-2xl text-gray-800 dark:text-white" />,
+      "SonarQube": <SiSonarqube className="text-2xl text-blue-500" />,
+    },
+    systemArchitect: {
+      "Microservices Architecture": <div className="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs font-bold">μS</div>,
+      "Distributed Systems": <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold">DS</div>,
+      "System Design": <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-xs font-bold">SD</div>,
+      "Scalable Architecture": <div className="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center text-xs font-bold">SA</div>,
     }
   };
 
-  // Skill proficiency levels (percentages)
+  // Updated skill proficiency levels
   const skillLevels = {
-    webDev: {
-      "Java": 90,
-      "JavaScript": 85,
-      "TypeScript": 80,
-      "ReactJS": 85,
-      "Angular": 75,
-      "NodeJS": 80,
-      "ExpressJS": 85,
-      "NestJS": 75,
-      "Spring Boot": 90,
-      "Master Authentication and Authorization": 85,
-      "JWT": 80
+    frontend: {
+      "React": 95,
+      "Angular": 85,
+      "Next.js": 80,
+      "Tailwind CSS": 90,
+      "ShadCN UI": 85,
+      "TypeScript": 90,
+      "JavaScript": 95
+    },
+    backendApis: {
+      "Java": 95,
+      "Spring Boot": 95,
+      "Node.js": 85,
+      "NestJS": 80,
+      "JWT": 90,
+      "OAuth2.0": 85,
+      "REST APIs": 95,
+      "GraphQL": 80
     },
     databases: {
-      "MySQL": 85,
-      "MongoDB": 80,
-      "PostgresQL": 75
+      "MySQL": 90,
+      "MongoDB": 85,
+      "PostgreSQL": 90,
+      "Redis": 90,
+      "Kafka": 85,
+      "RabbitMQ": 80,
+      "Elasticsearch": 85
     },
-    devOps: {
-      "Docker": 85,
-      "Nginx": 70,
-      "Jenkins": 75,
-      "AWS": 70,
-      "Kubernetes": 65,
-      "Redis": 70,
-      "Kafka": 60,
-      "Deployment": 80
+    devOpsCloud: {
+      "Docker": 90,
+      "Nginx": 85,
+      "Jenkins": 80,
+      "SSL Certbot Let's Encrypt": 85,
+      "CI/CD": 90,
+      "Ansible": 80,
+      "Kubernetes": 85,
+      "Linux": 85,
+      "AWS": 85
     },
-    tools: {
-      "VSCode": 90,
-      "IntelliJ IDEA": 85,
-      "Git": 90,
-      "Figma": 70,
-      "Postman": 85,
-      "Swagger API": 80,
-      "JWT": 80
+    qualityMonitoring: {
+      "Grafana": 80,
+      "Prometheus": 80,
+      "Git/GitHub": 90,
+      "SonarQube": 85
+    },
+    systemArchitect: {
+      "Microservices Architecture": 90,
+      "Distributed Systems": 85,
+      "System Design": 90,
+      "Scalable Architecture": 90
     }
   };
 
   const skillItems = {
-    webDev: t("items.webDev", { returnObjects: true }) as string[],
+    frontend: t("items.frontend", { returnObjects: true }) as string[],
+    backendApis: t("items.backendApis", { returnObjects: true }) as string[],
     databases: t("items.databases", { returnObjects: true }) as string[],
-    devOps: t("items.devOps", { returnObjects: true }) as string[],
-    tools: t("items.tools", { returnObjects: true }) as string[]
+    devOpsCloud: t("items.devOpsCloud", { returnObjects: true }) as string[],
+    qualityMonitoring: t("items.qualityMonitoring", { returnObjects: true }) as string[],
+    systemArchitect: t("items.systemArchitect", { returnObjects: true }) as string[]
   };
 
   return (
@@ -186,7 +213,7 @@ const SkillsSection = () => {
               <CardContent className="p-6">
                 <div className="space-y-4">
                   {skillItems[category as keyof typeof skillItems]?.map((skill) => {
-                    const level = skillLevels[category as keyof typeof skillLevels]?.[skill] || 70;
+                    const level = skillLevels[category as keyof typeof skillLevels]?.[skill] || 80;
                     return (
                       <motion.div
                         key={skill}

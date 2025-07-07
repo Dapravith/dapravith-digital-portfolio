@@ -3,15 +3,19 @@
   "title": "Skills",
   "subtitle": "Technology Stack I Worked With",
   "categories": {
-    "webDev": "Web Development", 
-    "databases": "Databases",
-    "devOps": "DevOps",
-    "tools": "Development Tools"
+    "frontend": "Frontend",
+    "backendApis": "Backend & APIs", 
+    "databases": "Databases & Messaging",
+    "devOpsCloud": "DevOps & Cloud",
+    "qualityMonitoring": "Quality & Monitoring",
+    "systemArchitect": "System Architect"
   },
   "items": {
-    "webDev": ["Java", "JavaScript", "TypeScript", "ReactJS", "Angular", "NodeJS", "ExpressJS", "NestJS", "Spring Boot", "Master Authentication and Authorization", "JWT"],
-    "databases": ["MySQL", "MongoDB", "PostgresQL"],
-    "devOps": ["Docker", "Nginx", "Jenkins", "Portainer.io", "AWS", "Bitbucket", "CI/CD", "Ansible", "Kubernetes", "Microservices", "Redis", "Kafka", "GitHub Actions", "Vercel", "Cloudflare", "Deployment"],
-    "tools": ["VSCode", "IntelliJ IDEA", "Git", "Figma", "Postman", "Swagger API", "Draw.io", "JWT"]
+    "frontend": ["React", "Angular", "Next.js", "Tailwind CSS", "ShadCN UI", "TypeScript", "JavaScript"],
+    "backendApis": ["Java", "Spring Boot", "Node.js", "NestJS", "JWT", "OAuth2.0", "REST APIs", "GraphQL"],
+    "databases": ["MySQL", "MongoDB", "PostgreSQL", "Redis", "Kafka", "RabbitMQ", "Elasticsearch"],
+    "devOpsCloud": ["Docker", "Nginx", "Jenkins", "SSL Certbot Let's Encrypt", "CI/CD", "Ansible", "Kubernetes", "Linux", "AWS"],
+    "qualityMonitoring": ["Grafana", "Prometheus", "Git/GitHub", "SonarQube"],
+    "systemArchitect": ["Microservices Architecture", "Distributed Systems", "System Design", "Scalable Architecture"]
   }
 }
