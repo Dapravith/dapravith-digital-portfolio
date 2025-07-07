@@ -2,8 +2,8 @@
 {
   "title": "About Me",
   "subtitle": "Professional Profile",
-  "paragraph1": "I'm a Full-Stack Developer with over 2 years of experience in building scalable web applications and implementing DevOps solutions. With a strong foundation in Java Spring Boot, React, and modern DevOps practices, I focus on creating efficient, secure, and user-friendly applications.",
-  "paragraph2": "My experience includes developing enterprise applications, implementing Single Sign-On systems, and containerizing applications with Docker. I'm passionate about creating clean, maintainable code and automating deployment processes.",
+  "paragraph1": "I'm a dedicated Backend Developer with expertise in building robust and scalable server-side applications. I specialize in Java Spring Boot, Spring Security, and DevOps architecture with a strong foundation in database optimization and web technologies.",
+  "paragraph2": "My focus is on system design and microservices architecture, creating efficient and maintainable backend solutions. I'm passionate about developing secure, high-performance applications and implementing best practices in software engineering.",
   "paragraph3": "I hold a degree in Information Technology and have completed specialized training in DevOps practices, including containerization, CI/CD pipelines, and infrastructure as code.",
   "resume": "Download Resume"
 }
