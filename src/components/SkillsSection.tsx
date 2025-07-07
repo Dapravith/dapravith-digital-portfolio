@@ -1,5 +1,7 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { useTranslation } from "react-i18next";
 import {
   FaJava,
@@ -108,6 +110,43 @@ const SkillsSection = () => {
     }
   };
 
+  // Skill proficiency levels (percentages)
+  const skillLevels = {
+    webDev: {
+      "Java": 90,
+      "JavaScript": 85,
+      "TypeScript": 80,
+      "ReactJS": 85,
+      "Angular": 75,
+      "NodeJS": 80,
+      "ExpressJS": 85,
+      "NestJS": 75,
+      "Spring Boot": 90
+    },
+    databases: {
+      "MySQL": 85,
+      "MongoDB": 80,
+      "PostgresQL": 75
+    },
+    devOps: {
+      "Docker": 85,
+      "Nginx": 70,
+      "Jenkins": 75,
+      "AWS": 70,
+      "Kubernetes": 65,
+      "Redis": 70,
+      "Kafka": 60
+    },
+    tools: {
+      "VSCode": 90,
+      "IntelliJ IDEA": 85,
+      "Git": 90,
+      "Figma": 70,
+      "Postman": 85,
+      "Swagger API": 80
+    }
+  };
+
   // Get skill items from translation
   const skillItems = {
     webDev: t("items.webDev", { returnObjects: true }) as string[],
@@ -132,31 +171,45 @@ const SkillsSection = () => {
           <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {Object.entries(categories).map(([category, categoryName]) => (
             <Card key={category} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
-              <div className="bg-primary/10 p-4">
+              <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-4">
                 <h3 className="text-xl font-semibold text-center">
                   {categoryName}
                 </h3>
               </div>
               <CardContent className="p-6">
-                <div className="flex flex-wrap gap-4 justify-center">
-                  {skillItems[category as keyof typeof skillItems]?.map((skill) => (
-                    <div
-                      key={skill}
-                      className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-muted transition-colors"
-                    >
-                      <div className="mb-2">
-                        {skillIcons[category as keyof typeof skillIcons]?.[skill] ||
-                          <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                            {skill.charAt(0)}
+                <div className="space-y-4">
+                  {skillItems[category as keyof typeof skillItems]?.map((skill) => {
+                    const level = skillLevels[category as keyof typeof skillLevels]?.[skill] || 70;
+                    return (
+                      <motion.div
+                        key={skill}
+                        className="space-y-2"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            {skillIcons[category as keyof typeof skillIcons]?.[skill] ||
+                              <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">
+                                {skill.charAt(0)}
+                              </div>
+                            }
+                            <span className="text-sm font-medium">{skill}</span>
                           </div>
-                        }
-                      </div>
-                      <span className="text-sm font-medium">{skill}</span>
-                    </div>
-                  ))}
+                          <span className="text-sm font-semibold text-primary">{level}%</span>
+                        </div>
+                        <Progress 
+                          value={level} 
+                          className="h-2 bg-gray-200 dark:bg-gray-700"
+                        />
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>

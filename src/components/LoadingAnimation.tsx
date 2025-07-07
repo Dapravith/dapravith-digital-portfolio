@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import ThreeJSLoadingText from "./ThreeJSLoadingText";
 
 interface LoadingAnimationProps {
   onComplete: () => void;
@@ -15,33 +16,20 @@ const LoadingAnimation = ({ onComplete }: LoadingAnimationProps) => {
         const newProgress = prev + 1;
         if (newProgress >= 100) {
           clearInterval(interval);
-          // Delay the completion to let the animation finish visually
           setTimeout(onComplete, 300);
           return 100;
         }
         return newProgress;
       });
-    }, 20); // 2 seconds total (20ms * 100)
+    }, 20);
     
     return () => clearInterval(interval);
   }, [onComplete]);
   
-  // Animations
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
     exit: { opacity: 0, transition: { duration: 0.5 } }
-  };
-  
-  const logoVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: { 
-      scale: 1, 
-      opacity: 1,
-      transition: { 
-        duration: 0.5 
-      }
-    }
   };
   
   const progressVariants = {
@@ -67,10 +55,12 @@ const LoadingAnimation = ({ onComplete }: LoadingAnimationProps) => {
       exit="exit"
     >
       <motion.div 
-        className="text-4xl font-bold mb-6 gradient-text"
-        variants={logoVariants}
+        className="mb-8"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
       >
-        RD
+        <ThreeJSLoadingText text="ROTHA" />
       </motion.div>
       
       <div className="w-64 h-36 bg-gray-100 dark:bg-gray-800 rounded-md p-3 overflow-hidden mb-8 font-mono text-xs">
@@ -89,7 +79,7 @@ const LoadingAnimation = ({ onComplete }: LoadingAnimationProps) => {
       
       <div className="w-64 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
         <motion.div 
-          className="h-full bg-gradient-to-r from-primary-blue to-primary-emerald"
+          className="h-full bg-gradient-to-r from-primary via-purple-500 to-secondary"
           variants={progressVariants}
           initial="hidden"
           animate="visible"

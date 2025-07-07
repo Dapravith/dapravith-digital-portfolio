@@ -8,6 +8,7 @@ import {
   Phone
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import ThreeJSFooterAnimation from "./ThreeJSFooterAnimation";
 
 const Footer = () => {
   const { t } = useTranslation("footer");
@@ -21,8 +22,10 @@ const Footer = () => {
   };
   
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container max-w-7xl mx-auto px-4">
+    <footer className="bg-gray-900 text-white py-12 relative overflow-hidden">
+      <ThreeJSFooterAnimation />
+      
+      <div className="container max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Name and Brief */}
           <div>
@@ -35,7 +38,7 @@ const Footer = () => {
                 href="https://github.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform duration-300"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
@@ -44,7 +47,7 @@ const Footer = () => {
                 href="https://linkedin.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -53,14 +56,14 @@ const Footer = () => {
                 href="https://twitter.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform duration-300"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a 
                 href="mailto:dapravithrotha@gmail.com" 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform duration-300"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
@@ -73,32 +76,32 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">{t("quickLinks")}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-400 hover:text-white transition-colors">
+                <a href="#home" className="text-gray-400 hover:text-white transition-colors hover:translate-x-2 transform duration-300 inline-block">
                   {tNav("home")}
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-white transition-colors">
+                <a href="#about" className="text-gray-400 hover:text-white transition-colors hover:translate-x-2 transform duration-300 inline-block">
                   {tNav("about")}
                 </a>
               </li>
               <li>
-                <a href="#experience" className="text-gray-400 hover:text-white transition-colors">
+                <a href="#experience" className="text-gray-400 hover:text-white transition-colors hover:translate-x-2 transform duration-300 inline-block">
                   {tNav("experience")}
                 </a>
               </li>
               <li>
-                <a href="#skills" className="text-gray-400 hover:text-white transition-colors">
+                <a href="#skills" className="text-gray-400 hover:text-white transition-colors hover:translate-x-2 transform duration-300 inline-block">
                   {tNav("skills")}
                 </a>
               </li>
               <li>
-                <a href="#projects" className="text-gray-400 hover:text-white transition-colors">
+                <a href="#projects" className="text-gray-400 hover:text-white transition-colors hover:translate-x-2 transform duration-300 inline-block">
                   {tNav("projects")}
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
+                <a href="#contact" className="text-gray-400 hover:text-white transition-colors hover:translate-x-2 transform duration-300 inline-block">
                   {tNav("contact")}
                 </a>
               </li>
