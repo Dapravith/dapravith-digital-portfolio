@@ -5,7 +5,9 @@ import {
   Twitter, 
   Mail, 
   ArrowUp,
-  Phone
+  Phone,
+  Send,
+  Facebook
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ThreeJSFooterAnimation from "./ThreeJSFooterAnimation";
@@ -60,6 +62,24 @@ const Footer = () => {
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.facebook.com/VithRMG/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://t.me/Dapravith_Rotha" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform duration-300"
+                aria-label="Telegram"
+              >
+                <Send className="h-5 w-5" />
               </a>
               <a 
                 href="mailto:dapravithrotha@gmail.com" 
