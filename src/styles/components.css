@@ -1,7 +1,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-blue to-primary-emerald bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
 
   .section-container {
@@ -9,7 +9,7 @@
   }
 
   .glass-card {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg;
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
   }
 
   .dark .glass-card {
@@ -25,18 +25,26 @@
   }
 
   .button-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary text-white font-medium py-2 px-4 rounded-md transition-all duration-300;
+    @apply bg-gradient-to-r from-primary to-secondary text-white font-medium py-3 px-6 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105;
   }
 
-  .dark .button-gradient:hover {
-    @apply from-[hsl(var(--primary-hover))] to-[hsl(var(--secondary-hover))];
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
 
-  .dark .button-gradient:active {
-    @apply from-[hsl(var(--primary-active))] to-[hsl(var(--secondary-active))];
+  .section-header {
+    @apply text-center mb-16;
   }
 
-  .dark .button-gradient:disabled {
-    @apply from-[hsl(var(--primary-disabled))] to-[hsl(var(--secondary-disabled))] cursor-not-allowed;
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-4 gradient-text;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto;
+  }
+
+  .creative-border {
+    @apply relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/20 before:to-secondary/20 before:rounded-lg before:blur-sm before:-z-10;
   }
 }

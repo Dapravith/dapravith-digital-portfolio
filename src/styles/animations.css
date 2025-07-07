@@ -20,6 +20,14 @@
     @apply w-full px-4 md:px-8 lg:px-16;
   }
 
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg;
+  }
+
+  .dark .glass-effect {
+    @apply bg-black/20 border-white/10;
+  }
+
   @keyframes rainbow-text {
     0% { color: #ff5e5e; }
     15% { color: #ffb86c; }
@@ -40,15 +48,14 @@
     background-size: 200% 200%;
     background-image: linear-gradient(
       45deg,
-      #ff5e5e,
-      #ffb86c,
-      #fae069,
-      #9ee37d,
-      #7dd3fc,
-      #a78bfa,
-      #f472b6
+      #3b82f6,
+      #8b5cf6,
+      #06b6d4,
+      #10b981,
+      #f59e0b,
+      #ef4444
     );
-    animation: gradient-flow 8s ease infinite;
+    animation: gradient-flow 4s ease infinite;
   }
 
   .animate-typing {
@@ -70,5 +77,23 @@
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: currentColor }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
   }
 }
