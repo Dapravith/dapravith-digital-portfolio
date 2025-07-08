@@ -45,6 +45,7 @@ import {
   SiTerraform,
   SiKeycloak,
   SiOpenid,
+  SiApachemaven,
 } from "react-icons/si";
 import {
   HiCubeTransparent,
@@ -101,7 +102,7 @@ export const skillIcons = {
   },
   toolsMonitoring: {
     "Git": <FaGitAlt className="text-2xl text-orange-600" />,
-    "Maven": <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-xs font-bold">M</div>,
+    "Maven": <SiApachemaven className="text-2xl text-red-600" />,
     "Gradle": <SiGradle className="text-2xl text-blue-600" />,
     "Grafana": <SiGrafana className="text-2xl text-orange-500" />,
     "Prometheus": <SiPrometheus className="text-2xl text-orange-600" />,
