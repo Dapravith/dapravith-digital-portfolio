@@ -12,6 +12,8 @@ import {
   FaLock,
   FaTerminal,
   FaShieldAlt,
+  FaMicrosoft,
+  FaCloud,
 } from "react-icons/fa";
 import {
   SiSpringboot,
@@ -47,6 +49,7 @@ import {
 import {
   HiCubeTransparent,
   HiCommandLine,
+  HiCog6Tooth,
 } from "react-icons/hi2";
 
 export const skillIcons = {
@@ -83,12 +86,12 @@ export const skillIcons = {
   },
   devOpsCloud: {
     "AWS": <FaAws className="text-2xl text-orange-400" />,
-    "Azure": <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold">AZ</div>,
-    "Alibaba Cloud": <div className="w-8 h-8 rounded-full bg-orange-600 text-white flex items-center justify-center text-xs font-bold">阿里</div>,
+    "Azure": <FaMicrosoft className="text-2xl text-blue-500" />,
+    "Alibaba Cloud": <FaCloud className="text-2xl text-orange-600" />,
     "Docker": <FaDocker className="text-2xl text-blue-500" />,
     "Kubernetes": <SiKubernetes className="text-2xl text-blue-500" />,
     "Linux/Unix": <FaLinux className="text-2xl text-black dark:text-white" />,
-    "CI/CD Tools": <SiJenkins className="text-2xl text-gray-600" />,
+    "CI/CD Tools": <HiCog6Tooth className="text-2xl text-gray-600" />,
     "Infrastructure as Code": <SiTerraform className="text-2xl text-purple-600" />,
     "GitAction": <SiGithubactions className="text-2xl text-gray-800 dark:text-white" />,
     "Jenkins": <SiJenkins className="text-2xl text-red-500" />,
