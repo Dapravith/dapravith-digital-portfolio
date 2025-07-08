@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { ArrowDown, Download, Eye } from "lucide-react";
+import TechIconsBackground from "./TechIconsBackground";
 
 const HeroSection = () => {
   const { t } = useTranslation("hero");
@@ -25,6 +26,9 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Tech Icons Background */}
+      <TechIconsBackground />
+      
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"></div>
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
