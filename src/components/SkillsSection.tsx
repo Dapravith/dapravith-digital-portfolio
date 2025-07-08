@@ -12,7 +12,7 @@ const SkillsSection = () => {
     backendApis: t("categories.backendApis"),
     databases: t("categories.databases"),
     devOpsCloud: t("categories.devOpsCloud"),
-    qualityMonitoring: t("categories.qualityMonitoring")
+    toolsMonitoring: t("categories.toolsMonitoring")
   };
 
   const skillItems = {
@@ -20,7 +20,7 @@ const SkillsSection = () => {
     backendApis: t("items.backendApis", { returnObjects: true }) as string[],
     databases: t("items.databases", { returnObjects: true }) as string[],
     devOpsCloud: t("items.devOpsCloud", { returnObjects: true }) as string[],
-    qualityMonitoring: t("items.qualityMonitoring", { returnObjects: true }) as string[]
+    toolsMonitoring: t("items.toolsMonitoring", { returnObjects: true }) as string[]
   };
 
   return (
