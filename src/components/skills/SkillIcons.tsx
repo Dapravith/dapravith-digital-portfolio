@@ -7,6 +7,7 @@ import {
   FaAngular,
   FaJava,
   FaLinux,
+  FaGitAlt,
 } from "react-icons/fa";
 import {
   SiSpringboot,
@@ -33,6 +34,9 @@ import {
   SiGrafana,
   SiGithub,
   SiSonarqube,
+  SiGithubactions,
+  SiGradle,
+  SiTerraform,
 } from "react-icons/si";
 
 export const skillIcons = {
@@ -48,11 +52,14 @@ export const skillIcons = {
   backendApis: {
     "Java": <FaJava className="text-2xl text-red-600" />,
     "Spring Boot": <SiSpringboot className="text-2xl text-green-600" />,
+    "SSO": <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">SSO</div>,
+    "OAuth2": <SiAuth0 className="text-2xl text-blue-600" />,
+    "OpenID Connect": <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold">OID</div>,
+    "RESTful APIs": <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-xs font-bold">API</div>,
+    "Microservices Architecture": <div className="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs font-bold">μS</div>,
     "Node.js": <FaNodeJs className="text-2xl text-green-600" />,
     "NestJS": <SiNestjs className="text-2xl text-red-600" />,
     "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
-    "OAuth2.0": <SiAuth0 className="text-2xl text-blue-600" />,
-    "REST APIs": <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-xs font-bold">API</div>,
     "GraphQL": <SiGraphql className="text-2xl text-pink-500" />,
   },
   databases: {
@@ -65,20 +72,28 @@ export const skillIcons = {
     "Elasticsearch": <SiElasticsearch className="text-2xl text-yellow-500" />,
   },
   devOpsCloud: {
-    "Docker": <FaDocker className="text-2xl text-blue-500" />,
-    "Nginx": <SiNginx className="text-2xl text-green-600" />,
-    "Jenkins": <SiJenkins className="text-2xl text-red-500" />,
-    "SSL Certbot Let's Encrypt": <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold">SSL</div>,
-    "CI/CD": <SiJenkins className="text-2xl text-gray-600" />,
-    "Ansible": <SiAnsible className="text-2xl text-red-600" />,
-    "Kubernetes": <SiKubernetes className="text-2xl text-blue-500" />,
-    "Linux": <FaLinux className="text-2xl text-black dark:text-white" />,
     "AWS": <FaAws className="text-2xl text-orange-400" />,
+    "Azure": <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold">AZ</div>,
+    "Alibaba Cloud": <div className="w-8 h-8 rounded-full bg-orange-600 text-white flex items-center justify-center text-xs font-bold">阿里</div>,
+    "Docker": <FaDocker className="text-2xl text-blue-500" />,
+    "Kubernetes": <SiKubernetes className="text-2xl text-blue-500" />,
+    "Linux/Unix": <FaLinux className="text-2xl text-black dark:text-white" />,
+    "CI/CD Tools": <SiJenkins className="text-2xl text-gray-600" />,
+    "Infrastructure as Code": <SiTerraform className="text-2xl text-purple-600" />,
+    "GitAction": <SiGithubactions className="text-2xl text-gray-800 dark:text-white" />,
+    "Jenkins": <SiJenkins className="text-2xl text-red-500" />,
+    "Nginx": <SiNginx className="text-2xl text-green-600" />,
+    "Ansible": <SiAnsible className="text-2xl text-red-600" />,
+    "System Design": <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-bold">SD</div>,
   },
-  qualityMonitoring: {
+  toolsMonitoring: {
+    "Git": <FaGitAlt className="text-2xl text-orange-600" />,
+    "Maven": <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-xs font-bold">M</div>,
+    "Gradle": <SiGradle className="text-2xl text-blue-600" />,
     "Grafana": <SiGrafana className="text-2xl text-orange-500" />,
     "Prometheus": <SiPrometheus className="text-2xl text-orange-600" />,
-    "Git/GitHub": <SiGithub className="text-2xl text-gray-800 dark:text-white" />,
     "SonarQube": <SiSonarqube className="text-2xl text-blue-500" />,
+    "Scripting": <div className="w-8 h-8 rounded-full bg-green-700 text-white flex items-center justify-center text-xs font-bold">SH</div>,
+    "SSL Certbot Let's Encrypt": <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold">SSL</div>,
   }
 };
