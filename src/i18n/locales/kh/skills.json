@@ -3,17 +3,17 @@
   "title": "ជំនាញ",
   "subtitle": "បច្ចេកវិទ្យាដែលខ្ញុំធ្លាប់បានប្រើប្រាស់",
   "categories": {
-    "frontend": "Frontend",
-    "backendApis": "Backend & APIs", 
+    "frontend": "អភិវឌ្ឍន៍ Frontend",
+    "backendApis": "Backend និង Java Development", 
     "databases": "មូលដ្ឋានទិន្នន័យ និង Messaging",
-    "devOpsCloud": "DevOps & Cloud",
-    "qualityMonitoring": "គុណភាព និង ការតាមដាន"
+    "devOpsCloud": "DevOps និង Cloud Platforms",
+    "toolsMonitoring": "ឧបករណ៍ និង ការតាមដាន"
   },
   "items": {
     "frontend": ["React", "Angular", "Next.js", "Tailwind CSS", "ShadCN UI", "TypeScript", "JavaScript"],
-    "backendApis": ["Java", "Spring Boot", "Node.js", "NestJS", "JWT", "OAuth2.0", "REST APIs", "GraphQL"],
+    "backendApis": ["Java", "Spring Boot", "SSO", "OAuth2", "OpenID Connect", "RESTful APIs", "Microservices Architecture", "Node.js", "NestJS", "JWT", "GraphQL"],
     "databases": ["MySQL", "MongoDB", "PostgreSQL", "Redis", "Kafka", "RabbitMQ", "Elasticsearch"],
-    "devOpsCloud": ["Docker", "Nginx", "Jenkins", "SSL Certbot Let's Encrypt", "CI/CD", "Ansible", "Kubernetes", "Linux", "AWS"],
-    "qualityMonitoring": ["Grafana", "Prometheus", "Git/GitHub", "SonarQube"]
+    "devOpsCloud": ["AWS", "Azure", "Alibaba Cloud", "Docker", "Kubernetes", "Linux/Unix", "CI/CD Tools", "Infrastructure as Code", "GitAction", "Jenkins", "Nginx", "Ansible", "System Design"],
+    "toolsMonitoring": ["Git", "Maven", "Gradle", "Grafana", "Prometheus", "SonarQube", "Scripting", "SSL Certbot Let's Encrypt"]
   }
 }
