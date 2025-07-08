@@ -8,6 +8,10 @@ import {
   FaJava,
   FaLinux,
   FaGitAlt,
+  FaServer,
+  FaLock,
+  FaTerminal,
+  FaShieldAlt,
 } from "react-icons/fa";
 import {
   SiSpringboot,
@@ -37,7 +41,13 @@ import {
   SiGithubactions,
   SiGradle,
   SiTerraform,
+  SiKeycloak,
+  SiOpenid,
 } from "react-icons/si";
+import {
+  HiCubeTransparent,
+  HiCommandLine,
+} from "react-icons/hi2";
 
 export const skillIcons = {
   frontend: {
@@ -45,18 +55,18 @@ export const skillIcons = {
     "Angular": <FaAngular className="text-2xl text-red-500" />,
     "Next.js": <SiNextdotjs className="text-2xl text-black dark:text-white" />,
     "Tailwind CSS": <SiTailwindcss className="text-2xl text-blue-400" />,
-    "ShadCN UI": <div className="w-8 h-8 rounded-full bg-gray-800 text-white flex items-center justify-center text-xs font-bold">UI</div>,
+    "ShadCN UI": <FaTerminal className="text-2xl text-gray-800 dark:text-white" />,
     "TypeScript": <SiTypescript className="text-2xl text-blue-500" />,
     "JavaScript": <SiJavascript className="text-2xl text-yellow-400" />,
   },
   backendApis: {
     "Java": <FaJava className="text-2xl text-red-600" />,
     "Spring Boot": <SiSpringboot className="text-2xl text-green-600" />,
-    "SSO": <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">SSO</div>,
+    "SSO": <SiKeycloak className="text-2xl text-blue-600" />,
     "OAuth2": <SiAuth0 className="text-2xl text-blue-600" />,
-    "OpenID Connect": <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold">OID</div>,
-    "RESTful APIs": <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-xs font-bold">API</div>,
-    "Microservices Architecture": <div className="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs font-bold">μS</div>,
+    "OpenID Connect": <SiOpenid className="text-2xl text-green-600" />,
+    "RESTful APIs": <FaServer className="text-2xl text-green-500" />,
+    "Microservices Architecture": <HiCubeTransparent className="text-2xl text-purple-600" />,
     "Node.js": <FaNodeJs className="text-2xl text-green-600" />,
     "NestJS": <SiNestjs className="text-2xl text-red-600" />,
     "JWT": <SiJsonwebtokens className="text-2xl text-purple-600" />,
@@ -84,7 +94,7 @@ export const skillIcons = {
     "Jenkins": <SiJenkins className="text-2xl text-red-500" />,
     "Nginx": <SiNginx className="text-2xl text-green-600" />,
     "Ansible": <SiAnsible className="text-2xl text-red-600" />,
-    "System Design": <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-bold">SD</div>,
+    "System Design": <FaServer className="text-2xl text-indigo-600" />,
   },
   toolsMonitoring: {
     "Git": <FaGitAlt className="text-2xl text-orange-600" />,
@@ -93,7 +103,7 @@ export const skillIcons = {
     "Grafana": <SiGrafana className="text-2xl text-orange-500" />,
     "Prometheus": <SiPrometheus className="text-2xl text-orange-600" />,
     "SonarQube": <SiSonarqube className="text-2xl text-blue-500" />,
-    "Scripting": <div className="w-8 h-8 rounded-full bg-green-700 text-white flex items-center justify-center text-xs font-bold">SH</div>,
-    "SSL Certbot Let's Encrypt": <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-xs font-bold">SSL</div>,
+    "Scripting": <HiCommandLine className="text-2xl text-green-700" />,
+    "SSL Certbot Let's Encrypt": <FaShieldAlt className="text-2xl text-green-600" />,
   }
 };
