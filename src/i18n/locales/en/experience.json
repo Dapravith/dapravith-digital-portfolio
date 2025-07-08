@@ -4,54 +4,61 @@
   "subtitle": "Professional Journey",
   "timeline": {
     "current": {
-      "title": "Full-stack Web Developer",
-      "company": "Digital Government Committee (DGC)",
+      "title": "Java Developer & DevOps Engineer",
+      "company": "General Secretariat of Digital Government Committee (DGC)",
       "period": "Oct 2024 - Present",
       "location": "Phnom Penh, Cambodia",
       "description": [
-        "Design and maintain Java-based applications using Spring Boot framework",
-        "Implement Single Sign-On (SSO) integration using OAuth2 and OpenID Connect with Keycloak",
-        "Collaborate with front-end teams to integrate server-side logic and ensure seamless user experience",
-        "Write clean, maintainable, and efficient code following best practices.",
-        "Optimize application performance and troubleshoot complex issues",
-        "Stay current with industry trends and emerging technologies",
-        "Work under the supervision of the Ministry of Post and Telecommunication (MPTC)"
+        "Design, develop, and maintain Java-based applications using Spring Boot framework",
+        "Implement and maintain SSO solutions using OAuth2 and OpenID Connect protocols with Keycloak",
+        "Collaborate with front-end developers to integrate user-facing elements with server-side logic",
+        "Write well-designed, testable, and efficient code following best practices",
+        "Participate in code reviews to ensure code quality and adherence to best practices",
+        "Design, implement, and maintain CI/CD pipelines using GitHub Actions",
+        "Monitor system performance and troubleshoot issues to ensure high availability and reliability",
+        "Automate manual tasks using scripting languages and configuration management tools",
+        "Troubleshoot, debug, and optimize application performance",
+        "Stay up to date with latest industry trends and technologies to ensure cutting-edge applications"
       ]
     },
     "job1": {
-      "title": "Software Development and DevOps Intern",
+      "title": "Software Development & DevOps Intern",
       "company": "Ministry of Economy and Finance",
-      "period": "Feb 2024 - Jun 2024",
+      "period": "Feb 2024 - Jul 2024",
       "location": "Phnom Penh, Cambodia",
       "description": [
-        "Contributed to DevOps integration and SSO initiatives",
-        "Designed web client applications optimized by Keycloak",
-        "Managed automation deployment, Dockerized applications, web server configuration, and secure sites",
-        "Assigned domain names for system projects and hosted all",
-        "Set up Telegram for project deployment monitoring and Jenkins CI/CD pipeline alerts"
+        "Contributed to internal DevOps and SSO initiatives",
+        "Managed Dockerized deployment pipelines and automated deployment processes",
+        "Configured NGINX servers and secured websites with SSL certificates",
+        "Integrated Telegram alerts into Jenkins CI/CD pipeline for monitoring",
+        "Helped in deploying and maintaining Java services in production environments",
+        "Assigned domain names for system projects and managed hosting infrastructure"
       ]
     },
     "job2": {
-      "title": "Web Developer Internship",
-      "company": "Institute of Technology of Cambodia",
-      "period": "Feb 2023 - May 2023",
+      "title": "Web Developer Intern",
+      "company": "Institute of Technology of Cambodia (ITC)",
+      "period": "Jul 2023 - Oct 2023",
       "location": "Phnom Penh, Cambodia",
       "description": [
-        "2-month internship on Delivery Service Management System",
-        "Utilized MERN Stack (MongoDB, ReactJS, NodeJS, ExpressJS)",
-        "Developed mobile apps for QR code scanning",
-        "Integrated APIs using Postman"
+        "Developed a full-stack campus project using MERN stack (MongoDB, Express, React, Node.js)",
+        "Integrated QR code scanning functionality for mobile applications",
+        "Used Postman for API testing, debugging, and documentation",
+        "Implemented frontend/backend integration and data flow management",
+        "Gained hands-on experience in full-stack development workflows"
       ]
     },
     "job3": {
-      "title": "DevOps Training",
-      "company": "Ministry of Public Works and Transport",
-      "period": "Feb 2023 - Jun 2023",
-      "location": "Phnom Penh Cambodia",
+      "title": "DevOps Trainee",
+      "company": "Camcyber Digital",
+      "period": "Feb 2023 - May 2023",
+      "location": "Phnom Penh, Cambodia",
       "description": [
-        "Covered Linux OS, Docker containerization, Nginx reverse proxy",
-        "Jenkins CI/CD, Ansible, Docker Swarm",
-        "Grafana monitoring"
+        "Practiced Linux CLI and server configuration fundamentals",
+        "Used Ansible for automated provisioning and configuration management",
+        "Set up monitoring dashboards using Grafana, Prometheus, and Loki",
+        "Built foundation in system monitoring, automation, and modern DevOps practices",
+        "Learned Docker containerization and Nginx reverse proxy configuration"
       ]
     }
   }
